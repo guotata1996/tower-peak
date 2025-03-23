@@ -1,0 +1,4 @@
+*.tif
+.venv
+.idea
+download/download_one.sh
