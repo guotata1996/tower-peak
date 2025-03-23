@@ -1,59 +1,36 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# Generate example elevation data
-def generate_elevation_data(size=(10, 10)):
-    x = np.linspace(-5, 5, size[0])
-    y = np.linspace(-5, 5, size[1])
-    X, Y = np.meshgrid(x, y)
-    Z = np.sin(np.sqrt(X ** 2 + Y ** 2)) * 120  # Scale to get values around 100
-    return X, Y, Z
-
-
-# Generate color map based on Z values
-def generate_color_data(Z, threshold):
-    colors = np.zeros((Z.shape[0] - 1, Z.shape[1] - 1, 3))
-    colors[:,:] = [0, 1, 0]
-    strict_above = np.logical_and(
-        np.logical_and(Z[1:,1:] >= threshold, Z[1:,:-1] >= threshold),
-        np.logical_and(Z[:-1,1:] >= threshold, Z[:-1,:-1] >= threshold))
-    just_above = np.logical_or(
-        np.logical_or(Z[1:,1:] >= threshold, Z[1:,:-1] >= threshold),
-        np.logical_or(Z[:-1,1:] >= threshold, Z[:-1,:-1] >= threshold))
-
-    colors[just_above] = [0,0,1]
-    colors[strict_above] = [1,0,0]
-    return colors
-
-
 # Plot function
-def plot_3d_surface(X, Y, Z, colors):
-    fig = plt.figure(figsize=(10, 7))
-    ax = fig.add_subplot(111, projection='3d')
+def plot_3d_surface(plot_args, X, Y, Z, colors):
+    fig, nrows, ncols, idx, title = plot_args
+
+    ax = fig.add_subplot(nrows, ncols, idx, projection='3d')
     rstride = X.shape[0] // 80
     cstride = X.shape[1] // 80
 
     surf = ax.plot_surface(X, Y, Z, facecolors=colors, edgecolor='k', linewidth=0.3, rstride=rstride, cstride=cstride)
 
-    ax.set_xlabel("X Axis")
-    ax.set_ylabel("Y Axis")
-    ax.set_zlabel("Elevation")
-    plt.show()
+    ax.set_xlabel("East-->")
+    ax.set_ylabel("South-->")
+    ax.set_zlabel("Elevation (m)")
+    ax.set_title(title)
 
-def plot_elevation(elevations: np.ndarray, colors: np.ndarray):
+def plot_elevation(plot_args, elevations: np.ndarray, colors: np.ndarray):
     dim0 = elevations.shape[0]
     dim1 = elevations.shape[1]
     assert colors.shape[0] == dim0 - 1
     assert colors.shape[1] == dim1 - 1
-    x = np.linspace(0, dim0, dim0)
-    y = np.linspace(0, dim1, dim1)
+    x = np.linspace(-dim0 // 2, dim0 - dim0 // 2, dim0)
+    y = np.linspace(-dim1 // 2, dim1 - dim1 // 2, dim1)
     X, Y = np.meshgrid(x, y)
-    plot_3d_surface(X, Y, elevations, colors)
+    plot_3d_surface(plot_args, X, Y, elevations, colors)
 
-if __name__ == '__main__':
-    # Generate data and plot
-    size = (200, 200)  # Grid size
-    X, Y, Z = generate_elevation_data(size)
-    colors = generate_color_data(Z, 100)
-    plot_3d_surface(X, Y, Z, colors)
+def plot_all(plots):
+    nrows = len(plots) // 2 + 1
+    fig = plt.figure(figsize=(10, 5 * nrows))
+    for i, (elevations, colors, title) in enumerate(plots, 1):
+        subplot_args = fig, nrows, 2, i, title
+        plot_elevation(subplot_args, elevations, colors)
+    fig.savefig('out.pdf', format='pdf')
+    # plt.show()

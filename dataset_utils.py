@@ -186,59 +186,53 @@ def collect_heightmap(lat: float, lon: float, radius: int):
 
     # Get data from N
     if north_row_range_r is not None:
-        print("Need N")
         n_data = get_h_array_at(lat + 1, lon)
         get_array_block(collected, north_row_range_w, col_range_w)[:, :] = \
             get_array_block(n_data, north_row_range_r, col_range_r)
 
     # Get data from NW
     if west_col_range_r is not None and north_row_range_r is not None:
-        print("Need NW")
         nw_data = get_h_array_at(lat + 1, lon - 1)
         get_array_block(collected, north_row_range_w, west_col_range_w)[:, :] = \
             get_array_block(nw_data, north_row_range_r, west_col_range_r)
 
     # Get data from W
     if west_col_range_r is not None:
-        print("Need W")
         w_data = get_h_array_at(lat, lon - 1)
         get_array_block(collected, row_range_w, west_col_range_w)[:, :] = \
             get_array_block(w_data, row_range_r, west_col_range_r)
 
     # Get data from SW
     if west_col_range_r is not None and south_row_range_r is not None:
-        print("Need SW")
         sw_data = get_h_array_at(lat - 1, lon - 1)
         get_array_block(collected, south_row_range_w, west_col_range_w)[:, :] = \
             get_array_block(sw_data, south_row_range_r, west_col_range_r)
 
     # Get data from S
     if south_row_range_r is not None:
-        print("Need S")
         s_data = get_h_array_at(lat - 1, lon)
         get_array_block(collected, south_row_range_w, col_range_w)[:, :] = \
             get_array_block(s_data, south_row_range_r, col_range_r)
 
     # Get data from SE
     if south_row_range_r is not None and east_col_range_r is not None:
-        print("Need SE")
         se_data = get_h_array_at(lat - 1, lon + 1)
         get_array_block(collected, south_row_range_w, east_col_range_w)[:, :] = \
             get_array_block(se_data, south_row_range_r, east_col_range_r)
 
     # Get data from E
     if east_col_range_r is not None:
-        print("Need E")
         e_data = get_h_array_at(lat, lon + 1)
         get_array_block(collected, row_range_w, east_col_range_w)[:, :] = \
             get_array_block(e_data, row_range_r, east_col_range_r)
 
     # Get data from NE
     if east_col_range_r is not None and north_row_range_r is not None:
-        print("Need NE")
         ne_data = get_h_array_at(lat + 1, lon + 1)
         get_array_block(collected, north_row_range_w, east_col_range_w)[:, :] = \
             get_array_block(ne_data, north_row_range_r, east_col_range_r)
 
     assert not np.iinfo(np.int16).min in collected
+    assert collected.shape[0] == collected.shape[1]
+    assert collected.shape[0] % 2 == 1
     return collected
