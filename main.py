@@ -3,9 +3,11 @@
 # 3. search the x,y grid of peak (within a radius of 1km) -> print out max value found
 import itertools
 import numpy as np
-from math import cos, pi, sqrt, atan
+from math import cos, pi, sqrt
 from plotting import plot_all
 from dataset_utils import collect_heightmap
+from kml_utils import parse_kml
+from tqdm import tqdm
 
 # from discovered peak, search area within radius
 SEARCH_RADIUS_DEGREE_LIMIT = 0.30 # degree, ~ 30km
@@ -105,7 +107,7 @@ def calc_ngrids_above(collected: np.ndarray, peak_elevation, threshold):
                 assert False
             face_color[x, y] = [0, 0, 1]
         elif len(local_cut_edges) == 4:
-            print("  Info: 4 cut edge, rare case. Noise in data.")
+            # print("  Info: 4 cut edge, rare case. Noise in data.")
             total_area += 1 / 2
             face_color[x, y] = [1, 0, 1]
         else:
@@ -115,15 +117,15 @@ def calc_ngrids_above(collected: np.ndarray, peak_elevation, threshold):
     return total_area, plot_data
 
 def analysis_peak(rough_lat, rough_lon, true_elevation=None,
-                  alpha_threshold_deg=20.0, discover_radius_degree=0.05):
+                  slope_threshold=0.30, discover_radius_degree=0.02):
     # from supplied lat, lon, discover peak:= highest point within discover_radius
     discover_radius_grids = int(discover_radius_degree * 3600) - 1
     discover_area = collect_heightmap(rough_lat, rough_lon, discover_radius_grids)
     peak_elevation = np.max(discover_area)
     if true_elevation is not None and \
-            (peak_elevation > true_elevation or peak_elevation < true_elevation * 0.95):
+            (peak_elevation > true_elevation * 1.01 or peak_elevation < true_elevation * 0.95):
         print(f"Error: Collected peak elevation ({peak_elevation}) is far from truth value ({true_elevation})")
-        return
+        return peak_elevation, []
 
     xs, ys = np.where(discover_area == peak_elevation)
     peak_x = xs[0]
@@ -131,19 +133,21 @@ def analysis_peak(rough_lat, rough_lon, true_elevation=None,
     if not discover_radius_grids * 0.1 < peak_x < discover_radius_grids * 1.9 or \
        not discover_radius_grids * 0.1 < peak_y < discover_radius_grids * 1.9:
         print("Warning: peak found at the border of discover area. Please double check lat/lon.")
-        return
+        return peak_elevation, []
 
     offset_row = discover_radius_grids - peak_x
     offset_col = discover_radius_grids - peak_y
     lat = rough_lat + offset_row / 3600
     lon = rough_lon - offset_col / 3600
-    print("Use peak elevation:", peak_elevation, "at", lat, lon)
+    print(true_elevation, ":Use peak elevation:", peak_elevation, "at", lat, lon)
 
     search_radius = 150 # start from 0.04 arc second
     height_below = 300
     search_step = 200
     collected = collect_heightmap(lat, lon, search_radius)
+
     plots = []
+    results = []
 
     while height_below < peak_elevation and search_radius < SEARCH_RADIUS_GRIDS_LIMIT:
         threshold = peak_elevation - height_below
@@ -153,33 +157,40 @@ def analysis_peak(rough_lat, rough_lon, true_elevation=None,
         if result == 0:
             search_radius += 100
             collected = collect_heightmap(lat, lon, search_radius)
-            print("Increase search radius to", search_radius)
+            # print("  Increase search radius to", search_radius)
             continue
 
         total_area, plot_data = result
         plots.append(plot_data)
         meters_per_grid = 30.92 * cos(lat * pi / 180)
         total_area *= pow(meters_per_grid, 2)
-        alpha_rad = atan(height_below / sqrt(total_area / pi))
-        alpha_deg = alpha_rad / pi * 180
-        print(threshold, ": Alpha=", alpha_deg, "degree")
-        if alpha_deg < alpha_threshold_deg:
+        slope = height_below / sqrt(total_area / pi)
+        results.append((height_below, slope))
+        # print(threshold, ": Slope=", slope*100, "%")
+        if slope < slope_threshold:
             break
         height_below += search_step
 
-    print("Generating plots...")
-    plot_all(plots)
+    # print("Generating plots...")
+    # plot_all(plots, show=True)
+    return peak_elevation, results
 
 if __name__ == '__main__':
     # North-East
-    analysis_peak(27.98, 86.92) # Everest, 1.24
-    # analysis_peak(35.88, 76.52) # K2, 0.60
-    # analysis_peak(27.70, 88.15) # Kan, 0.78
-    # analysis_peak(27.96, 86.93,
-    #                 true_elevation=8516, discover_radius_degree=0.02) # Lhotse, 1.22
+    # analysis_peak(36.51, 74.5225, true_elevation=7795)
 
-    # North-West
-    # analysis_peak(63.07, -151.01) # McKinley, 1,55
+    file_path = "HighestPeaks.kml"  # Change this to your actual file path
+    places = parse_kml(file_path)
 
-    # South-East
-    # analysis_peak(-9.12, -77.61) # Huascaran, 2.62
+    results = []
+    for name, elevation, coords in tqdm(places):
+        lat, lon = coords
+        observed_elevation, peak_result = analysis_peak(lat, lon, elevation)
+        slope_line = ','.join(str(slope) for drop, slope in peak_result)
+        results.append(f"{name},{elevation},{observed_elevation},{slope_line}\n")
+
+    with open('output.csv', 'w') as f:
+        drop_range = list(range(300, 3500, 200))
+        drop_headers = ','.join(str(d) for d in drop_range)
+        f.write(f'Peak,TrueElevation,ObservedElevation,{drop_headers}\n')
+        f.writelines(results)
