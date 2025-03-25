@@ -4,7 +4,7 @@
 import itertools
 import numpy as np
 from math import cos, pi, sqrt
-from plotting import plot_all
+from plotting import plot_multi_elevation
 from dataset_utils import collect_heightmap
 from kml_utils import parse_kml
 from tqdm import tqdm
@@ -31,9 +31,9 @@ def calc_ngrids_above(collected: np.ndarray, peak_elevation, threshold):
     discovery_queue = [(peak_x, peak_y)]  # those >= threshold
     while discovery_queue:
         node_x, node_y = discovery_queue.pop()
-        if collected[node_x, node_y] > peak_elevation:
-            print(f"Supplied threshold {threshold} is below peak col.")
-            return None
+        # if collected[node_x, node_y] > peak_elevation:
+        #     print(f"Supplied threshold {threshold} is below peak col.")
+        #     return None
 
         for gx, gy in itertools.product([node_x, node_x - 1], [node_y, node_y - 1]):
             if 0 <= gx < 2 * data_radius and \
@@ -117,7 +117,7 @@ def calc_ngrids_above(collected: np.ndarray, peak_elevation, threshold):
     return total_area, plot_data
 
 def analysis_peak(rough_lat, rough_lon, true_elevation=None,
-                  slope_threshold=0.30, discover_radius_degree=0.02):
+                  sine_threshold=0.30, discover_radius_degree=0.02):
     # from supplied lat, lon, discover peak:= highest point within discover_radius
     discover_radius_grids = int(discover_radius_degree * 3600) - 1
     discover_area = collect_heightmap(rough_lat, rough_lon, discover_radius_grids)
@@ -165,10 +165,10 @@ def analysis_peak(rough_lat, rough_lon, true_elevation=None,
         meters_per_grid = 30.92 * cos(lat * pi / 180)
         total_area *= pow(meters_per_grid, 2)
         slope = height_below / sqrt(total_area / pi)
-        results.append((height_below, slope))
-        # print(threshold, ": Slope=", slope*100, "%")
-        if slope < slope_threshold:
+        sine = slope / sqrt(1 + slope * slope)
+        if sine < sine_threshold:
             break
+        results.append((height_below, sine))
         height_below += search_step
 
     # print("Generating plots...")
@@ -186,11 +186,15 @@ if __name__ == '__main__':
     for name, elevation, coords in tqdm(places):
         lat, lon = coords
         observed_elevation, peak_result = analysis_peak(lat, lon, elevation)
-        slope_line = ','.join(str(slope) for drop, slope in peak_result)
-        results.append(f"{name},{elevation},{observed_elevation},{slope_line}\n")
+        if peak_result:
+            eth = max([r[0] * r[1] for r in peak_result])
+        else:
+            eth = 0
+        slope_line = ','.join(str(sine) for drop, sine in peak_result)
+        results.append(f"{name},{eth},{elevation},{observed_elevation},{slope_line}\n")
 
     with open('output.csv', 'w') as f:
         drop_range = list(range(300, 3500, 200))
         drop_headers = ','.join(str(d) for d in drop_range)
-        f.write(f'Peak,TrueElevation,ObservedElevation,{drop_headers}\n')
+        f.write(f'Peak,ETH,TrueElevation,ObservedElevation,{drop_headers}\n')
         f.writelines(results)
