@@ -26,7 +26,11 @@ def get_dataset_at(lat: float, lon: float):
 
 def get_h_array_at(lat: float, lon: float):
     # Returns: numpy.ndarray shape=(3601, 3601)
-    with rasterio.open(get_dataset_at(lat, lon)) as dataset:
+    downloaded = get_dataset_at(lat, lon)
+    if not exists(downloaded):
+        print("Download failed. Assuming sea level (all zero).")
+        return np.zeros((3601, 3601), dtype=np.int16)
+    with rasterio.open(downloaded) as dataset:
         return dataset.read(1)
 
 def get_row_col_at(lat: float, lon: float):

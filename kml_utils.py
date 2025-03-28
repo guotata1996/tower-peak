@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import re
 
-def parse_kml(file_path):
+def kml_to_csv(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
@@ -32,15 +32,44 @@ def parse_kml(file_path):
 
         results.append((name, meters, coordinates))
 
+    with open('Highest.csv', 'w') as out:
+        for name, h, (lat, long) in results:
+            out.write(f"{name},{float(lat)},{float(long)},{float(h)}\n")
     return results
+
+def convert_wiki_csv(file_path):
+    with open(file_path, 'r') as f:
+        with open('MostProminent.csv', 'w') as out:
+            for line in f.readlines()[1:]:
+                name, coord, h = line.split(',')
+                coord = coord[:coord.index('(')]
+                coord = coord.split('/')[-1]
+                lat, long = coord.split(';')
+
+                out.write(f"{name},{float(lat)},{float(long)},{float(h)}\n")
+
+def parse_csv(file_path):
+    results = []
+    with open(file_path, 'r') as f:
+        for line in f.readlines():
+            name, lat, lon, elevation = line.split(',')
+            results.append((name, float(elevation), (float(lat), float(lon))))
+    return results
+
+def parse_coord_input(file_path):
+    if file_path.endswith('kml'):
+        return kml_to_csv(file_path)
+    elif file_path.endswith('csv'):
+        return parse_csv(file_path)
+    assert False
 
 
 if __name__ == "__main__":
-    file_path = "HighestPeaks.kml"  # Change this to your actual file path
-    places = parse_kml(file_path)
+    file_path = "data\\HighestPeaks.kml"
+    places = parse_coord_input(file_path)
 
     for name, elevation, coords in places:
         assert len(name) > 0
         assert elevation > 2000.0, name
         assert len(coords) == 2
-        # print(f"Name: {name}\nMeters: {elevation} m\nCoordinates: {coords}\n")
+        print(f"Name: {name}\nMeters: {elevation} m\nCoordinates: {coords}\n")

@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import random
-import matplotlib.colors as mcolors
 
 # Plot function
 def plot_3d_surface(plot_args, X, Y, Z, colors):
@@ -30,8 +29,9 @@ def plot_elevation(plot_args, elevations: np.ndarray, colors: np.ndarray):
     plot_3d_surface(plot_args, X, Y, elevations[::-1,:], colors[::-1,:,:])
 
 def plot_multi_elevation(plots, show=False):
+    plots = plots[:6]
     nrows = len(plots) // 2 + 1
-    fig = plt.figure(figsize=(10, 5 * nrows))
+    fig = plt.figure(figsize=(10, 6 * nrows))
     for i, (elevations, colors, title) in enumerate(plots, 1):
         subplot_args = fig, nrows, 2, i, title
         plot_elevation(subplot_args, elevations, colors)
@@ -63,13 +63,17 @@ def plot_result(result_path: str):
     with open(result_path, 'r') as f:
         for line in f.readlines()[1:]:
             line = line.replace('\n', '')
-            name, eth, true_elevation, obs_elevation, *sines = line.split(',')
+            name, eth, _, _, true_elevation, obs_elevation, *sines = line.split(',')
+            if not eth:
+                continue
             if float(eth) == 0:
                 # Invalid result
                 continue
             mx = []
             my = []
             for drop, sine in zip(y_full_range, sines):
+                if not sine:
+                    continue
                 sine = float(sine)
                 mx.append(1 / sine)
                 my.append(drop)
@@ -77,7 +81,12 @@ def plot_result(result_path: str):
             max_drop = my[-1]
             if max_drop < 1400 * y_scale:
                 continue
-
+            if float(eth) < 600:
+                if random.random() < 0.75:
+                    continue
+            elif float(eth) < 900:
+                if random.random() < 0.5:
+                    continue
             color = random_mpl_color()
             ax.plot(mx, my, color, linewidth=1)
             name = name.split('/')[0]
@@ -85,20 +94,20 @@ def plot_result(result_path: str):
                     my[-1] + random.randrange(-100,100) * y_scale, name, fontsize=10, color=color, ha='center', va='bottom')
 
     # Plot classification regions
-    mask0 = Y / y_scale > X * 1200
+    mask0 = Y / y_scale > X * 1100
     ax.imshow(mask0, extent=(0, 4, 0, 3300 * y_scale), origin='lower', cmap='Purples', alpha=0.7)
-    mask1 = np.logical_and(Y / y_scale > X * 900, Y / y_scale <= X * 1200)
+    mask1 = np.logical_and(Y / y_scale > X * 800, Y / y_scale <= X * 1100)
     ax.imshow(mask1, extent=(0, 4, 0, 3300 * y_scale), origin='lower', cmap='Oranges', alpha=0.6)
-    mask2 = np.logical_and(Y / y_scale > X * 600, Y / y_scale <= X * 900)
+    mask2 = np.logical_and(Y / y_scale > X * 550, Y / y_scale <= X * 800)
     ax.imshow(mask2, extent=(0, 4, 0, 3300 * y_scale), origin='lower', cmap='Blues', alpha=0.5)
-    mask3 = np.logical_and(Y / y_scale > X * 300, Y / y_scale <= X * 600)
+    mask3 = np.logical_and(Y / y_scale > X * 300, Y / y_scale <= X * 550)
     ax.imshow(mask3, extent=(0, 4, 0, 3300 * y_scale), origin='lower', cmap='Greens', alpha=0.4)
     maskInf = Y / y_scale <= X * 300
     ax.imshow(maskInf, extent=(0, 4, 0, 3300 * y_scale), origin='lower', cmap='Grays', alpha=0.3)
 
-    ax.text(1.5, 3000 * y_scale, "Alien\n1200+", fontsize=15, color='r')
-    ax.text(2.5, 3000 * y_scale, "Ultra\n900+", fontsize=15, color='c')
-    ax.text(3.2, 3000 * y_scale, "Superb\n600+", fontsize=15, color='m')
+    ax.text(1.5, 3000 * y_scale, "TierZero\n1200+", fontsize=15, color='r')
+    ax.text(3.2, 3000 * y_scale, "Ultra\n900+", fontsize=15, color='c')
+    ax.text(3.2, 2600 * y_scale, "Superb\n600+", fontsize=15, color='m')
     ax.text(3, 1200 * y_scale, "Notable\n300+", fontsize=15, color='b')
     ax.text(3, 500 * y_scale, "Common", fontsize=15, color='w')
 

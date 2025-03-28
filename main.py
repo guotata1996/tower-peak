@@ -2,11 +2,13 @@
 # 2. download from database if needed
 # 3. search the x,y grid of peak (within a radius of 1km) -> print out max value found
 import itertools
+import math
+
 import numpy as np
 from math import cos, pi, sqrt
 from plotting import plot_multi_elevation
 from dataset_utils import collect_heightmap
-from kml_utils import parse_kml
+from kml_utils import parse_coord_input
 from tqdm import tqdm
 
 # from discovered peak, search area within radius
@@ -117,7 +119,7 @@ def calc_ngrids_above(collected: np.ndarray, peak_elevation, threshold):
     return total_area, plot_data
 
 def analysis_peak(rough_lat, rough_lon, true_elevation=None,
-                  sine_threshold=0.30, discover_radius_degree=0.02):
+                  angle_threshold=0.194, discover_radius_degree=0.02):
     # from supplied lat, lon, discover peak:= highest point within discover_radius
     discover_radius_grids = int(discover_radius_degree * 3600) - 1
     discover_area = collect_heightmap(rough_lat, rough_lon, discover_radius_grids)
@@ -165,22 +167,20 @@ def analysis_peak(rough_lat, rough_lon, true_elevation=None,
         meters_per_grid = 30.92 * cos(lat * pi / 180)
         total_area *= pow(meters_per_grid, 2)
         slope = height_below / sqrt(total_area / pi)
-        sine = slope / sqrt(1 + slope * slope)
-        if sine < sine_threshold:
+        angle = math.atan(slope) / (math.pi / 2)
+        if height_below >= 1000 and angle < angle_threshold:
             break
-        results.append((height_below, sine))
+        results.append((height_below, angle))
         height_below += search_step
 
     # print("Generating plots...")
-    # plot_all(plots, show=True)
+    # plot_multi_elevation(plots, show=True)
     return peak_elevation, results
 
 if __name__ == '__main__':
-    # North-East
-    # analysis_peak(36.51, 74.5225, true_elevation=7795)
+    # analysis_peak(27.99, 86.92, true_elevation=8849)
 
-    file_path = "HighestPeaks.kml"  # Change this to your actual file path
-    places = parse_kml(file_path)
+    places = parse_coord_input("data\\Combined.csv")
 
     results = []
     for name, elevation, coords in tqdm(places):
@@ -191,10 +191,10 @@ if __name__ == '__main__':
         else:
             eth = 0
         slope_line = ','.join(str(sine) for drop, sine in peak_result)
-        results.append(f"{name},{eth},{elevation},{observed_elevation},{slope_line}\n")
+        results.append(f"{name},{eth},{lat},{lon},{elevation},{observed_elevation},{slope_line}\n")
 
     with open('output.csv', 'w') as f:
         drop_range = list(range(300, 3500, 200))
         drop_headers = ','.join(str(d) for d in drop_range)
-        f.write(f'Peak,ETH,TrueElevation,ObservedElevation,{drop_headers}\n')
+        f.write(f'Peak,ETH,Latitude,Longitude,TrueElevation,ObservedElevation,{drop_headers}\n')
         f.writelines(results)
