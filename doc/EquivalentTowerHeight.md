@@ -72,8 +72,8 @@ All quads Q containing at least 1 vertex in S is taken into consideration:
 2. Otherwise, perform an interpolation on two of its edges and form a straight line across Q with elevation == elevation_threshold. 
 Count Q as a partial grid sliced by the straight line.
 
-This illustration shows how we define Mt Everest's area above 8750m by interpolating a contour. 
-Elevation data is imaginary for display only.
+This figure shows how we define Mt Everest's area above 8750m by interpolating a contour. 
+Elevation data is for illustration purpose only.
 ![area_image](area_estimation.png "Area")
 
 Once we know the number of grids, we can multiply it by a single grid (1 by 1 arc second)'s area, which only depends on latitude.

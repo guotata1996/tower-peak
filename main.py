@@ -178,8 +178,10 @@ def analysis_peak(rough_lat, rough_lon, true_elevation=None,
     return peak_elevation, results
 
 if __name__ == '__main__':
+    # single-peak analysis for Mount Everest
     # analysis_peak(27.99, 86.92, true_elevation=8849)
 
+    # Analyze all peaks in the dataset
     places = parse_coord_input("data\\Combined.csv")
 
     results = []

@@ -1,0 +1,6835 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>EquivalentTowerHeight</title>
+        <style>:root
+{
+    --markdown-font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif;
+    --markdown-font-size: 14px;
+    --markdown-line-height: 1.6;
+    --vscode-font-family:"Segoe WPC", "Segoe UI", sans-serif;
+    --vscode-font-weight:normal;
+    --vscode-font-size:13px;
+    --vscode-editor-font-family:Consolas, "Courier New", monospace;
+    --vscode-editor-font-weight:normal;
+    --vscode-editor-font-size:14px;
+    --vscode-foreground:#616161;
+    --vscode-errorForeground:#a1260d;
+    --vscode-descriptionForeground:#717171;
+    --vscode-icon-foreground:#424242;
+    --vscode-focusBorder:#0090f1;
+    --vscode-textSeparator-foreground:rgba(0, 0, 0, 0.18);
+    --vscode-textLink-foreground:#006ab1;
+    --vscode-textLink-activeForeground:#006ab1;
+    --vscode-textPreformat-foreground:#a31515;
+    --vscode-textBlockQuote-background:rgba(127, 127, 127, 0.1);
+    --vscode-textBlockQuote-border:rgba(0, 122, 204, 0.5);
+    --vscode-textCodeBlock-background:rgba(220, 220, 220, 0.4);
+    --vscode-widget-shadow:#a8a8a8;
+    --vscode-input-background:#ffffff;
+    --vscode-input-foreground:#616161;
+    --vscode-inputOption-activeBorder:rgba(0, 122, 204, 0);
+    --vscode-inputOption-activeBackground:rgba(0, 144, 241, 0.2);
+    --vscode-inputOption-activeForeground:#000000;
+    --vscode-input-placeholderForeground:#767676;
+    --vscode-inputValidation-infoBackground:#d6ecf2;
+    --vscode-inputValidation-infoBorder:#007acc;
+    --vscode-inputValidation-warningBackground:#f6f5d2;
+    --vscode-inputValidation-warningBorder:#b89500;
+    --vscode-inputValidation-errorBackground:#f2dede;
+    --vscode-inputValidation-errorBorder:#be1100;
+    --vscode-dropdown-background:#ffffff;
+    --vscode-dropdown-border:#cecece;
+    --vscode-checkbox-background:#ffffff;
+    --vscode-checkbox-border:#cecece;
+    --vscode-button-foreground:#ffffff;
+    --vscode-button-background:#007acc;
+    --vscode-button-hoverBackground:#0062a3;
+    --vscode-button-secondaryForeground:#ffffff;
+    --vscode-button-secondaryBackground:#5f6a79;
+    --vscode-button-secondaryHoverBackground:#4c5561;
+    --vscode-badge-background:#c4c4c4;
+    --vscode-badge-foreground:#333333;
+    --vscode-scrollbar-shadow:#dddddd;
+    --vscode-scrollbarSlider-background:rgba(100, 100, 100, 0.4);
+    --vscode-scrollbarSlider-hoverBackground:rgba(100, 100, 100, 0.7);
+    --vscode-scrollbarSlider-activeBackground:rgba(0, 0, 0, 0.6);
+    --vscode-progressBar-background:#0e70c0;
+    --vscode-editorError-foreground:#e51400;
+    --vscode-editorWarning-foreground:#e9a700;
+    --vscode-editorInfo-foreground:#75beff;
+    --vscode-editorHint-foreground:#6c6c6c;
+    --vscode-editor-background:#ffffff;
+    --vscode-editor-foreground:#000000;
+    --vscode-editorWidget-background:#f3f3f3;
+    --vscode-editorWidget-foreground:#616161;
+    --vscode-editorWidget-border:#c8c8c8;
+    --vscode-quickInput-background:#f3f3f3;
+    --vscode-quickInput-foreground:#616161;
+    --vscode-quickInputTitle-background:rgba(0, 0, 0, 0.06);
+    --vscode-pickerGroup-foreground:#0066bf;
+    --vscode-pickerGroup-border:#cccedb;
+    --vscode-editor-selectionBackground:#add6ff;
+    --vscode-editor-inactiveSelectionBackground:#e5ebf1;
+    --vscode-editor-selectionHighlightBackground:rgba(173, 214, 255, 0.5);
+    --vscode-editor-findMatchBackground:#a8ac94;
+    --vscode-editor-findMatchHighlightBackground:rgba(234, 92, 0, 0.33);
+    --vscode-editor-findRangeHighlightBackground:rgba(180, 180, 180, 0.3);
+    --vscode-searchEditor-findMatchBackground:rgba(234, 92, 0, 0.22);
+    --vscode-editor-hoverHighlightBackground:rgba(173, 214, 255, 0.15);
+    --vscode-editorHoverWidget-background:#f3f3f3;
+    --vscode-editorHoverWidget-foreground:#616161;
+    --vscode-editorHoverWidget-border:#c8c8c8;
+    --vscode-editorHoverWidget-statusBarBackground:#e7e7e7;
+    --vscode-editorLink-activeForeground:#0000ff;
+    --vscode-editorLightBulb-foreground:#ddb100;
+    --vscode-editorLightBulbAutoFix-foreground:#007acc;
+    --vscode-diffEditor-insertedTextBackground:rgba(155, 185, 85, 0.2);
+    --vscode-diffEditor-removedTextBackground:rgba(255, 0, 0, 0.2);
+    --vscode-diffEditor-diagonalFill:rgba(34, 34, 34, 0.2);
+    --vscode-list-focusBackground:#d6ebff;
+    --vscode-list-activeSelectionBackground:#0074e8;
+    --vscode-list-activeSelectionForeground:#ffffff;
+    --vscode-list-inactiveSelectionBackground:#e4e6f1;
+    --vscode-list-hoverBackground:#e8e8e8;
+    --vscode-list-dropBackground:#d6ebff;
+    --vscode-list-highlightForeground:#0066bf;
+    --vscode-list-invalidItemForeground:#b89500;
+    --vscode-list-errorForeground:#b01011;
+    --vscode-list-warningForeground:#855f00;
+    --vscode-listFilterWidget-background:#efc1ad;
+    --vscode-listFilterWidget-outline:rgba(0, 0, 0, 0);
+    --vscode-listFilterWidget-noMatchesOutline:#be1100;
+    --vscode-list-filterMatchBackground:rgba(234, 92, 0, 0.33);
+    --vscode-tree-indentGuidesStroke:#a9a9a9;
+    --vscode-list-deemphasizedForeground:#8e8e90;
+    --vscode-menu-foreground:#616161;
+    --vscode-menu-background:#ffffff;
+    --vscode-menu-selectionForeground:#ffffff;
+    --vscode-menu-selectionBackground:#0074e8;
+    --vscode-menu-separatorBackground:#888888;
+    --vscode-editor-snippetTabstopHighlightBackground:rgba(10, 50, 100, 0.2);
+    --vscode-editor-snippetFinalTabstopHighlightBorder:rgba(10, 50, 100, 0.5);
+    --vscode-breadcrumb-foreground:rgba(97, 97, 97, 0.8);
+    --vscode-breadcrumb-background:#ffffff;
+    --vscode-breadcrumb-focusForeground:#4e4e4e;
+    --vscode-breadcrumb-activeSelectionForeground:#4e4e4e;
+    --vscode-breadcrumbPicker-background:#f3f3f3;
+    --vscode-merge-currentHeaderBackground:rgba(64, 200, 174, 0.5);
+    --vscode-merge-currentContentBackground:rgba(64, 200, 174, 0.2);
+    --vscode-merge-incomingHeaderBackground:rgba(64, 166, 255, 0.5);
+    --vscode-merge-incomingContentBackground:rgba(64, 166, 255, 0.2);
+    --vscode-merge-commonHeaderBackground:rgba(96, 96, 96, 0.4);
+    --vscode-merge-commonContentBackground:rgba(96, 96, 96, 0.16);
+    --vscode-editorOverviewRuler-currentContentForeground:rgba(64, 200, 174, 0.5);
+    --vscode-editorOverviewRuler-incomingContentForeground:rgba(64, 166, 255, 0.5);
+    --vscode-editorOverviewRuler-commonContentForeground:rgba(96, 96, 96, 0.4);
+    --vscode-editorOverviewRuler-findMatchForeground:rgba(209, 134, 22, 0.49);
+    --vscode-editorOverviewRuler-selectionHighlightForeground:rgba(160, 160, 160, 0.8);
+    --vscode-minimap-findMatchHighlight:#d18616;
+    --vscode-minimap-selectionHighlight:#add6ff;
+    --vscode-minimap-errorHighlight:rgba(255, 18, 18, 0.7);
+    --vscode-minimap-warningHighlight:#e9a700;
+    --vscode-minimapSlider-background:rgba(100, 100, 100, 0.2);
+    --vscode-minimapSlider-hoverBackground:rgba(100, 100, 100, 0.35);
+    --vscode-minimapSlider-activeBackground:rgba(0, 0, 0, 0.3);
+    --vscode-problemsErrorIcon-foreground:#e51400;
+    --vscode-problemsWarningIcon-foreground:#e9a700;
+    --vscode-problemsInfoIcon-foreground:#75beff;
+    --vscode-editor-lineHighlightBorder:#eeeeee;
+    --vscode-editor-rangeHighlightBackground:rgba(253, 255, 0, 0.2);
+    --vscode-editor-symbolHighlightBackground:rgba(234, 92, 0, 0.33);
+    --vscode-editorCursor-foreground:#000000;
+    --vscode-editorWhitespace-foreground:rgba(51, 51, 51, 0.2);
+    --vscode-editorIndentGuide-background:#d3d3d3;
+    --vscode-editorIndentGuide-activeBackground:#939393;
+    --vscode-editorLineNumber-foreground:#237893;
+    --vscode-editorActiveLineNumber-foreground:#0b216f;
+    --vscode-editorLineNumber-activeForeground:#0b216f;
+    --vscode-editorRuler-foreground:#d3d3d3;
+    --vscode-editorCodeLens-foreground:#999999;
+    --vscode-editorBracketMatch-background:rgba(0, 100, 0, 0.1);
+    --vscode-editorBracketMatch-border:#b9b9b9;
+    --vscode-editorOverviewRuler-border:rgba(127, 127, 127, 0.3);
+    --vscode-editorGutter-background:#ffffff;
+    --vscode-editorUnnecessaryCode-opacity:rgba(0, 0, 0, 0.47);
+    --vscode-editorOverviewRuler-rangeHighlightForeground:rgba(0, 122, 204, 0.6);
+    --vscode-editorOverviewRuler-errorForeground:rgba(255, 18, 18, 0.7);
+    --vscode-editorOverviewRuler-warningForeground:#e9a700;
+    --vscode-editorOverviewRuler-infoForeground:#75beff;
+    --vscode-editorOverviewRuler-bracketMatchForeground:#a0a0a0;
+    --vscode-symbolIcon-arrayForeground:#616161;
+    --vscode-symbolIcon-booleanForeground:#616161;
+    --vscode-symbolIcon-classForeground:#d67e00;
+    --vscode-symbolIcon-colorForeground:#616161;
+    --vscode-symbolIcon-constantForeground:#616161;
+    --vscode-symbolIcon-constructorForeground:#652d90;
+    --vscode-symbolIcon-enumeratorForeground:#d67e00;
+    --vscode-symbolIcon-enumeratorMemberForeground:#007acc;
+    --vscode-symbolIcon-eventForeground:#d67e00;
+    --vscode-symbolIcon-fieldForeground:#007acc;
+    --vscode-symbolIcon-fileForeground:#616161;
+    --vscode-symbolIcon-folderForeground:#616161;
+    --vscode-symbolIcon-functionForeground:#652d90;
+    --vscode-symbolIcon-interfaceForeground:#007acc;
+    --vscode-symbolIcon-keyForeground:#616161;
+    --vscode-symbolIcon-keywordForeground:#616161;
+    --vscode-symbolIcon-methodForeground:#652d90;
+    --vscode-symbolIcon-moduleForeground:#616161;
+    --vscode-symbolIcon-namespaceForeground:#616161;
+    --vscode-symbolIcon-nullForeground:#616161;
+    --vscode-symbolIcon-numberForeground:#616161;
+    --vscode-symbolIcon-objectForeground:#616161;
+    --vscode-symbolIcon-operatorForeground:#616161;
+    --vscode-symbolIcon-packageForeground:#616161;
+    --vscode-symbolIcon-propertyForeground:#616161;
+    --vscode-symbolIcon-referenceForeground:#616161;
+    --vscode-symbolIcon-snippetForeground:#616161;
+    --vscode-symbolIcon-stringForeground:#616161;
+    --vscode-symbolIcon-structForeground:#616161;
+    --vscode-symbolIcon-textForeground:#616161;
+    --vscode-symbolIcon-typeParameterForeground:#616161;
+    --vscode-symbolIcon-unitForeground:#616161;
+    --vscode-symbolIcon-variableForeground:#007acc;
+    --vscode-editor-foldBackground:rgba(173, 214, 255, 0.3);
+    --vscode-editorGutter-foldingControlForeground:#424242;
+    --vscode-editor-onTypeRenameBackground:rgba(255, 0, 0, 0.3);
+    --vscode-editorSuggestWidget-background:#f3f3f3;
+    --vscode-editorSuggestWidget-border:#c8c8c8;
+    --vscode-editorSuggestWidget-foreground:#000000;
+    --vscode-editorSuggestWidget-selectedBackground:#d6ebff;
+    --vscode-editorSuggestWidget-highlightForeground:#0066bf;
+    --vscode-editor-wordHighlightBackground:rgba(87, 87, 87, 0.25);
+    --vscode-editor-wordHighlightStrongBackground:rgba(14, 99, 156, 0.25);
+    --vscode-editorOverviewRuler-wordHighlightForeground:rgba(160, 160, 160, 0.8);
+    --vscode-editorOverviewRuler-wordHighlightStrongForeground:rgba(192, 160, 192, 0.8);
+    --vscode-peekViewTitle-background:#ffffff;
+    --vscode-peekViewTitleLabel-foreground:#333333;
+    --vscode-peekViewTitleDescription-foreground:rgba(97, 97, 97, 0.9);
+    --vscode-peekView-border:#007acc;
+    --vscode-peekViewResult-background:#f3f3f3;
+    --vscode-peekViewResult-lineForeground:#646465;
+    --vscode-peekViewResult-fileForeground:#1e1e1e;
+    --vscode-peekViewResult-selectionBackground:rgba(51, 153, 255, 0.2);
+    --vscode-peekViewResult-selectionForeground:#6c6c6c;
+    --vscode-peekViewEditor-background:#f2f8fc;
+    --vscode-peekViewEditorGutter-background:#f2f8fc;
+    --vscode-peekViewResult-matchHighlightBackground:rgba(234, 92, 0, 0.3);
+    --vscode-peekViewEditor-matchHighlightBackground:rgba(245, 216, 2, 0.87);
+    --vscode-editorMarkerNavigationError-background:#e51400;
+    --vscode-editorMarkerNavigationWarning-background:#e9a700;
+    --vscode-editorMarkerNavigationInfo-background:#75beff;
+    --vscode-editorMarkerNavigation-background:#ffffff;
+    --vscode-tab-activeBackground:#ffffff;
+    --vscode-tab-unfocusedActiveBackground:#ffffff;
+    --vscode-tab-inactiveBackground:#ececec;
+    --vscode-tab-unfocusedInactiveBackground:#ececec;
+    --vscode-tab-activeForeground:#333333;
+    --vscode-tab-inactiveForeground:rgba(51, 51, 51, 0.7);
+    --vscode-tab-unfocusedActiveForeground:rgba(51, 51, 51, 0.7);
+    --vscode-tab-unfocusedInactiveForeground:rgba(51, 51, 51, 0.35);
+    --vscode-tab-activeModifiedBorder:#33aaee;
+    --vscode-tab-inactiveModifiedBorder:rgba(51, 170, 238, 0.5);
+    --vscode-tab-unfocusedActiveModifiedBorder:rgba(51, 170, 238, 0.7);
+    --vscode-tab-unfocusedInactiveModifiedBorder:rgba(51, 170, 238, 0.25);
+    --vscode-tab-border:#f3f3f3;
+    --vscode-editorPane-background:#ffffff;
+    --vscode-editorGroupHeader-tabsBackground:#f3f3f3;
+    --vscode-editorGroupHeader-noTabsBackground:#ffffff;
+    --vscode-editorGroup-border:#e7e7e7;
+    --vscode-editorGroup-dropBackground:rgba(38, 119, 203, 0.18);
+    --vscode-imagePreview-border:rgba(128, 128, 128, 0.35);
+    --vscode-panel-background:#ffffff;
+    --vscode-panel-border:rgba(128, 128, 128, 0.35);
+    --vscode-panelTitle-activeForeground:#424242;
+    --vscode-panelTitle-inactiveForeground:rgba(66, 66, 66, 0.75);
+    --vscode-panelTitle-activeBorder:#424242;
+    --vscode-panelInput-border:#dddddd;
+    --vscode-panel-dropBorder:#424242;
+    --vscode-panelSection-dropBackground:rgba(38, 119, 203, 0.18);
+    --vscode-panelSectionHeader-background:rgba(128, 128, 128, 0.2);
+    --vscode-panelSection-border:rgba(128, 128, 128, 0.35);
+    --vscode-statusBar-foreground:#ffffff;
+    --vscode-statusBar-noFolderForeground:#ffffff;
+    --vscode-statusBar-background:#007acc;
+    --vscode-statusBar-noFolderBackground:#68217a;
+    --vscode-statusBarItem-activeBackground:rgba(255, 255, 255, 0.18);
+    --vscode-statusBarItem-hoverBackground:rgba(255, 255, 255, 0.12);
+    --vscode-statusBarItem-prominentForeground:#ffffff;
+    --vscode-statusBarItem-prominentBackground:rgba(0, 0, 0, 0.5);
+    --vscode-statusBarItem-prominentHoverBackground:rgba(0, 0, 0, 0.3);
+    --vscode-activityBar-background:#2c2c2c;
+    --vscode-activityBar-foreground:#ffffff;
+    --vscode-activityBar-inactiveForeground:rgba(255, 255, 255, 0.4);
+    --vscode-activityBar-activeBorder:#ffffff;
+    --vscode-activityBar-dropBorder:#ffffff;
+    --vscode-activityBarBadge-background:#007acc;
+    --vscode-activityBarBadge-foreground:#ffffff;
+    --vscode-statusBarItem-remoteBackground:#16825d;
+    --vscode-statusBarItem-remoteForeground:#ffffff;
+    --vscode-extensionBadge-remoteBackground:#007acc;
+    --vscode-extensionBadge-remoteForeground:#ffffff;
+    --vscode-sideBar-background:#f3f3f3;
+    --vscode-sideBarTitle-foreground:#6f6f6f;
+    --vscode-sideBar-dropBackground:rgba(38, 119, 203, 0.18);
+    --vscode-sideBarSectionHeader-background:rgba(0, 0, 0, 0);
+    --vscode-sideBarSectionHeader-border:rgba(97, 97, 97, 0.19);
+    --vscode-titleBar-activeForeground:#333333;
+    --vscode-titleBar-inactiveForeground:rgba(51, 51, 51, 0.6);
+    --vscode-titleBar-activeBackground:#dddddd;
+    --vscode-titleBar-inactiveBackground:rgba(221, 221, 221, 0.6);
+    --vscode-menubar-selectionForeground:#333333;
+    --vscode-menubar-selectionBackground:rgba(0, 0, 0, 0.1);
+    --vscode-notifications-foreground:#616161;
+    --vscode-notifications-background:#f3f3f3;
+    --vscode-notificationLink-foreground:#006ab1;
+    --vscode-notificationCenterHeader-background:#e7e7e7;
+    --vscode-notifications-border:#e7e7e7;
+    --vscode-notificationsErrorIcon-foreground:#e51400;
+    --vscode-notificationsWarningIcon-foreground:#e9a700;
+    --vscode-notificationsInfoIcon-foreground:#75beff;
+    --vscode-editorGutter-commentRangeForeground:#c5c5c5;
+    --vscode-editor-stackFrameHighlightBackground:rgba(255, 255, 102, 0.45);
+    --vscode-editor-focusedStackFrameHighlightBackground:rgba(206, 231, 206, 0.45);
+    --vscode-terminal-foreground:#333333;
+    --vscode-terminal-selectionBackground:rgba(0, 0, 0, 0.25);
+    --vscode-terminal-border:rgba(128, 128, 128, 0.35);
+    --vscode-statusBar-debuggingBackground:#cc6633;
+    --vscode-statusBar-debuggingForeground:#ffffff;
+    --vscode-settings-headerForeground:#444444;
+    --vscode-settings-modifiedItemIndicator:#66afe0;
+    --vscode-settings-dropdownBackground:#ffffff;
+    --vscode-settings-dropdownBorder:#cecece;
+    --vscode-settings-dropdownListBorder:#c8c8c8;
+    --vscode-settings-checkboxBackground:#ffffff;
+    --vscode-settings-checkboxBorder:#cecece;
+    --vscode-settings-textInputBackground:#ffffff;
+    --vscode-settings-textInputForeground:#616161;
+    --vscode-settings-textInputBorder:#cecece;
+    --vscode-settings-numberInputBackground:#ffffff;
+    --vscode-settings-numberInputForeground:#616161;
+    --vscode-settings-numberInputBorder:#cecece;
+    --vscode-debugExceptionWidget-border:#a31515;
+    --vscode-debugExceptionWidget-background:#f1dfde;
+    --vscode-editorGutter-modifiedBackground:#66afe0;
+    --vscode-editorGutter-addedBackground:#81b88b;
+    --vscode-editorGutter-deletedBackground:#ca4b51;
+    --vscode-minimapGutter-modifiedBackground:#66afe0;
+    --vscode-minimapGutter-addedBackground:#81b88b;
+    --vscode-minimapGutter-deletedBackground:#ca4b51;
+    --vscode-editorOverviewRuler-modifiedForeground:rgba(102, 175, 224, 0.6);
+    --vscode-editorOverviewRuler-addedForeground:rgba(129, 184, 139, 0.6);
+    --vscode-editorOverviewRuler-deletedForeground:rgba(202, 75, 81, 0.6);
+    --vscode-searchEditor-textInputBorder:#cecece;
+    --vscode-debugIcon-breakpointForeground:#e51400;
+    --vscode-debugIcon-breakpointDisabledForeground:#848484;
+    --vscode-debugIcon-breakpointUnverifiedForeground:#848484;
+    --vscode-debugIcon-breakpointCurrentStackframeForeground:#ffcc00;
+    --vscode-debugIcon-breakpointStackframeForeground:#89d185;
+    --vscode-debugToolBar-background:#f3f3f3;
+    --vscode-debugIcon-startForeground:#388a34;
+    --vscode-debugIcon-pauseForeground:#007acc;
+    --vscode-debugIcon-stopForeground:#a1260d;
+    --vscode-debugIcon-disconnectForeground:#a1260d;
+    --vscode-debugIcon-restartForeground:#388a34;
+    --vscode-debugIcon-stepOverForeground:#007acc;
+    --vscode-debugIcon-stepIntoForeground:#007acc;
+    --vscode-debugIcon-stepOutForeground:#007acc;
+    --vscode-debugIcon-continueForeground:#007acc;
+    --vscode-debugIcon-stepBackForeground:#007acc;
+    --vscode-debugTokenExpression-name:#9b46b0;
+    --vscode-debugTokenExpression-value:rgba(108, 108, 108, 0.8);
+    --vscode-debugTokenExpression-string:#a31515;
+    --vscode-debugTokenExpression-boolean:#0000ff;
+    --vscode-debugTokenExpression-number:#098658;
+    --vscode-debugTokenExpression-error:#e51400;
+    --vscode-debugView-exceptionLabelForeground:#ffffff;
+    --vscode-debugView-exceptionLabelBackground:#a31515;
+    --vscode-debugView-stateLabelForeground:#616161;
+    --vscode-debugView-stateLabelBackground:rgba(136, 136, 136, 0.27);
+    --vscode-debugView-valueChangedHighlight:#569cd6;
+    --vscode-debugConsole-infoForeground:#75beff;
+    --vscode-debugConsole-warningForeground:#e9a700;
+    --vscode-debugConsole-errorForeground:#a1260d;
+    --vscode-debugConsole-sourceForeground:#616161;
+    --vscode-debugConsoleInputIcon-foreground:#616161;
+    --vscode-extensionButton-prominentBackground:#327e36;
+    --vscode-extensionButton-prominentForeground:#ffffff;
+    --vscode-extensionButton-prominentHoverBackground:#28632b;
+    --vscode-notebook-cellBorderColor:#dae3e9;
+    --vscode-notebook-focusedEditorBorder:#0090f1;
+    --vscode-notebookStatusSuccessIcon-foreground:#388a34;
+    --vscode-notebookStatusErrorIcon-foreground:#a1260d;
+    --vscode-notebookStatusRunningIcon-foreground:#616161;
+    --vscode-notebook-outputContainerBackgroundColor:rgba(200, 221, 241, 0.31);
+    --vscode-notebook-cellToolbarSeparator:rgba(128, 128, 128, 0.35);
+    --vscode-notebook-focusedCellBackground:rgba(200, 221, 241, 0.31);
+    --vscode-notebook-cellHoverBackground:rgba(200, 221, 241, 0.22);
+    --vscode-notebook-focusedCellBorder:rgba(0, 0, 0, 0.12);
+    --vscode-notebook-cellStatusBarItemHoverBackground:rgba(0, 0, 0, 0.08);
+    --vscode-notebook-cellInsertionIndicator:#0090f1;
+    --vscode-notebookScrollbarSlider-background:rgba(100, 100, 100, 0.4);
+    --vscode-notebookScrollbarSlider-hoverBackground:rgba(100, 100, 100, 0.7);
+    --vscode-notebookScrollbarSlider-activeBackground:rgba(0, 0, 0, 0.6);
+    --vscode-notebook-symbolHighlightBackground:rgba(253, 255, 0, 0.2);
+    --vscode-scm-providerBorder:#c8c8c8;
+    --vscode-terminal-ansiBlack:#000000;
+    --vscode-terminal-ansiRed:#cd3131;
+    --vscode-terminal-ansiGreen:#00bc00;
+    --vscode-terminal-ansiYellow:#949800;
+    --vscode-terminal-ansiBlue:#0451a5;
+    --vscode-terminal-ansiMagenta:#bc05bc;
+    --vscode-terminal-ansiCyan:#0598bc;
+    --vscode-terminal-ansiWhite:#555555;
+    --vscode-terminal-ansiBrightBlack:#666666;
+    --vscode-terminal-ansiBrightRed:#cd3131;
+    --vscode-terminal-ansiBrightGreen:#14ce14;
+    --vscode-terminal-ansiBrightYellow:#b5ba00;
+    --vscode-terminal-ansiBrightBlue:#0451a5;
+    --vscode-terminal-ansiBrightMagenta:#bc05bc;
+    --vscode-terminal-ansiBrightCyan:#0598bc;
+    --vscode-terminal-ansiBrightWhite:#a5a5a5;
+    --vscode-gitDecoration-addedResourceForeground:#587c0c;
+    --vscode-gitDecoration-modifiedResourceForeground:#895503;
+    --vscode-gitDecoration-deletedResourceForeground:#ad0707;
+    --vscode-gitDecoration-untrackedResourceForeground:#007100;
+    --vscode-gitDecoration-ignoredResourceForeground:#8e8e90;
+    --vscode-gitDecoration-conflictingResourceForeground:#6c6cc4;
+    --vscode-gitDecoration-submoduleResourceForeground:#1258a7;
+    --vscode-gitlens-gutterBackgroundColor:rgba(0, 0, 0, 0.05);
+    --vscode-gitlens-gutterForegroundColor:#747474;
+    --vscode-gitlens-gutterUncommittedForegroundColor:rgba(0, 188, 242, 0.6);
+    --vscode-gitlens-trailingLineBackgroundColor:rgba(0, 0, 0, 0);
+    --vscode-gitlens-trailingLineForegroundColor:rgba(153, 153, 153, 0.35);
+    --vscode-gitlens-lineHighlightBackgroundColor:rgba(0, 188, 242, 0.2);
+    --vscode-gitlens-lineHighlightOverviewRulerColor:rgba(0, 188, 242, 0.6);
+    --vscode-issues-newIssueDecoration:rgba(0, 0, 0, 0.28);
+}
+
+body
+{
+    background-color: var(--vscode-editor-background);
+    color: var(--vscode-editor-foreground);
+    font-family: var(--vscode-font-family);
+    font-weight: var(--vscode-font-weight);
+    font-size: var(--vscode-font-size);
+    margin: 0;
+    padding: 0 20px;
+}
+
+img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a
+{
+    color: var(--vscode-textLink-foreground);
+}
+
+a:hover
+{
+    color: var(--vscode-textLink-activeForeground);
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus
+{
+    outline: 1px solid -webkit-focus-ring-color;
+    outline-offset: -1px;
+}
+
+code
+{
+    color: var(--vscode-textPreformat-foreground);
+}
+
+blockquote
+{
+    background: var(--vscode-textBlockQuote-background);
+    border-color: var(--vscode-textBlockQuote-border);
+}
+
+kbd
+{
+    color: var(--vscode-editor-foreground);
+    border-radius: 3px;
+    vertical-align: middle;
+    padding: 1px 3px;
+
+    background-color: hsla(0,0%,50%,.17);
+    border: 1px solid rgba(71,71,71,.4);
+    border-bottom-color: rgba(88,88,88,.4);
+    box-shadow: inset 0 -1px 0 rgba(88,88,88,.4);
+}
+
+.vscode-light kbd
+{
+    background-color: hsla(0,0%,87%,.5);
+    border: 1px solid hsla(0,0%,80%,.7);
+    border-bottom-color: hsla(0,0%,73%,.7);
+    box-shadow: inset 0 -1px 0 hsla(0,0%,73%,.7);
+}
+
+::-webkit-scrollbar
+{
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-corner
+{
+    background-color: var(--vscode-editor-background);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--vscode-scrollbarSlider-background);
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background-color: var(--vscode-scrollbarSlider-hoverBackground);
+}
+::-webkit-scrollbar-thumb:active
+{
+    background-color: var(--vscode-scrollbarSlider-activeBackground);
+}
+
+.emoji
+{
+    height: 20px;
+}
+
+pre
+{
+    white-space: pre-wrap;
+}
+
+.page-break
+{
+    display: block;
+    page-break-after: always;
+}
+
+.no-page-break
+{
+    page-break-inside: avoid;
+}
+</style>
+<style>/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+</style>
+<style>/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+html, body {
+	font-family: var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+body {
+	padding-top: 1em;
+}
+
+/* Reset margin top for elements */
+h1, h2, h3, h4, h5, h6,
+p, ol, ul, pre {
+	margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	margin-top: 24px;
+	margin-bottom: 16px;
+	line-height: 1.25;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection :not(tr,ul,ol).code-active-line:before,
+body.showEditorSelection :not(tr,ul,ol).code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+.vscode-high-contrast.showEditorSelection  :not(tr,ul,ol).code-line .code-line:hover:before {
+	border-left: none;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+/* Prevent `sub` and `sup` elements from affecting line height */
+sub,
+sup {
+	line-height: 0;
+}
+
+ul ul:first-child,
+ul ol:first-child,
+ol ul:first-child,
+ol ol:first-child {
+	margin-bottom: 0;
+}
+
+img, video {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+p {
+	margin-bottom: 16px;
+}
+
+li p {
+	margin-bottom: 0.7em;
+}
+
+ul,
+ol {
+	margin-bottom: 0.7em;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	border-bottom: 1px solid;
+}
+
+h1 {
+	font-size: 2em;
+	margin-top: 0;
+	padding-bottom: 0.3em;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h2 {
+	font-size: 1.5em;
+	padding-bottom: 0.3em;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.875em;
+}
+
+h6 {
+	font-size: 0.85em;
+}
+
+table {
+	border-collapse: collapse;
+	margin-bottom: 0.7em;
+}
+
+th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+th,
+td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0px 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-radius: 2px;
+}
+
+code {
+	font-family: var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	display: inline-block;
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+	background: none;
+}
+
+/** Theming */
+
+pre {
+	background-color: var(--vscode-textCodeBlock-background);
+	border: 1px solid var(--vscode-widget-border);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light h2,
+.vscode-light hr,
+.vscode-light td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark h2,
+.vscode-dark hr,
+.vscode-dark td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+</style>
+<style>/*
+https://raw.githubusercontent.com/isagalaev/highlight.js/master/src/styles/vs2015.css
+*/
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+	color: #569CD6;
+}
+.hljs-link {
+	color: #569CD6;
+	text-decoration: underline;
+}
+
+.hljs-built_in,
+.hljs-type {
+	color: #4EC9B0;
+}
+
+.hljs-number,
+.hljs-class {
+	color: #B8D7A3;
+}
+
+.hljs-string,
+.hljs-meta-string {
+	color: #D69D85;
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+	color: #9A5334;
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+	color: #DCDCDC;
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: #57A64A;
+	font-style: italic;
+}
+
+.hljs-doctag {
+	color: #608B4E;
+}
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+	color: #9B9B9B;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+	color: #BD63C5;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+	color: #9CDCFE;
+}
+
+.hljs-section {
+	color: gold;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+
+/*.hljs-code {
+	font-family:'Monospace';
+}*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+	color: #D7BA7D;
+}
+
+.hljs-addition {
+	background-color: var(--vscode-diffEditor-insertedTextBackground, rgba(155, 185, 85, 0.2));
+	color: rgb(155, 185, 85);
+	display: inline-block;
+	width: 100%;
+}
+
+.hljs-deletion {
+	background: var(--vscode-diffEditor-removedTextBackground, rgba(255, 0, 0, 0.2));
+	color: rgb(255, 0, 0);
+	display: inline-block;
+	width: 100%;
+}
+
+
+/*
+From https://raw.githubusercontent.com/isagalaev/highlight.js/master/src/styles/vs.css
+*/
+/*
+
+Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+
+*/
+
+.vscode-light .hljs-function,
+.vscode-light .hljs-params,
+.vscode-light .hljs-number,
+.vscode-light .hljs-class  {
+	color: inherit;
+}
+
+.vscode-light .hljs-comment,
+.vscode-light .hljs-quote,
+.vscode-light .hljs-number,
+.vscode-light .hljs-class,
+.vscode-light .hljs-variable {
+	color: #008000;
+}
+
+.vscode-light .hljs-keyword,
+.vscode-light .hljs-selector-tag,
+.vscode-light .hljs-name,
+.vscode-light .hljs-tag {
+	color: #00f;
+}
+
+.vscode-light .hljs-built_in,
+.vscode-light .hljs-builtin-name {
+	color: #007acc;
+}
+
+.vscode-light .hljs-string,
+.vscode-light .hljs-section,
+.vscode-light .hljs-attribute,
+.vscode-light .hljs-literal,
+.vscode-light .hljs-template-tag,
+.vscode-light .hljs-template-variable,
+.vscode-light .hljs-type {
+	color: #a31515;
+}
+
+.vscode-light .hljs-subst,
+.vscode-light .hljs-selector-attr,
+.vscode-light .hljs-selector-pseudo,
+.vscode-light .hljs-meta,
+.vscode-light .hljs-meta-keyword {
+	color: #2b91af;
+}
+.vscode-light .hljs-title,
+.vscode-light .hljs-doctag {
+	color: #808080;
+}
+
+.vscode-light .hljs-attr {
+	color: #f00;
+}
+
+.vscode-light .hljs-symbol,
+.vscode-light .hljs-bullet,
+.vscode-light .hljs-link {
+	color: #00b0e8;
+}
+
+
+.vscode-light .hljs-emphasis {
+	font-style: italic;
+}
+
+.vscode-light .hljs-strong {
+	font-weight: bold;
+}
+</style>
+<style>@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.16.21"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathboldfrak,.katex .textboldfrak{font-family:KaTeX_Fraktur;font-weight:700}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .mathsfit,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{align-items:baseline;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.2777777778em;margin-right:-.5555555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.1666666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.3333333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.6666666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.4566666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.1466666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.7142857143em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.8571428571em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.1428571429em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.2857142857em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.4285714286em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.7142857143em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.0571428571em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.4685714286em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.9628571429em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.5542857143em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.5555555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.6666666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.7777777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.8888888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.1111111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.3333333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.3044444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.7644444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.4166666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.5833333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.6666666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.7283333333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.0733333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.3472222222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.4166666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.4861111111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.5555555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.6944444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.4402777778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.7277777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.2893518519em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.3472222222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.4050925926em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.462962963em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.5208333333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.6944444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.2002314815em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.4398148148em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.2410800386em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.2892960463em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.337512054em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.3857280617em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.4339440694em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.4821600771em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.5785920926em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.6943105111em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.8331726133em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.1996142719em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.2009646302em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.2411575563em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.2813504823em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.3215434084em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.3617363344em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.4019292605em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.4823151125em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.578778135em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.6945337621em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.8336012862em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-box;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+</style>
+<style>/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.katex-error {
+	color: var(--vscode-editorError-foreground);
+}
+</style>
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 data-line="0" class="code-line" dir="auto" id="equivalent-tower-height-eth-which-is-the-most-magnificent-of-peak-on-the-earth" tabindex="-1">Equivalent Tower Height (ETH): Which is the most magnificent of peak on the Earth?</h1>
+<h2 data-line="2" class="code-line" dir="auto" id="introduction" tabindex="-1">Introduction</h2>
+<p data-line="3" class="code-line" dir="auto">When talking about the magnificence of a peak, people usually either talk about its elevation, relative height (rise),
+or use photos and videos taken nearby. However, none of these traditional factors is both accurate and
+objective enough, to convince one peak is more magnificent than another.</p>
+<table data-line="7" class="code-line" dir="auto">
+<thead data-line="7" class="code-line" dir="auto">
+<tr data-line="7" class="code-line" dir="auto">
+<th>Criteria</th>
+<th>Definition</th>
+<th>Problems</th>
+</tr>
+</thead>
+<tbody data-line="9" class="code-line" dir="auto">
+<tr data-line="9" class="code-line" dir="auto">
+<td>Elevation</td>
+<td>Rise from sea level</td>
+<td>Most peaks locate far from sea</td>
+</tr>
+<tr data-line="10" class="code-line" dir="auto">
+<td>Topological Prominence</td>
+<td>Rise from key col</td>
+<td>Key col may be thousands of kilometers away, like Everest</td>
+</tr>
+<tr data-line="11" class="code-line" dir="auto">
+<td>Visual evidence</td>
+<td>photos, satellite data, etc.</td>
+<td>Hard to quantify</td>
+</tr>
+</tbody>
+</table>
+<p data-line="13" class="code-line" dir="auto">Kai Xu introduced the concept of "jut" (described in more detail below), to measure its maximum degree of rise from
+a nearby terrain. While jut provides a better measurement of the peak's impressiveness from a ground-observer's
+perspective, it usually favors tall cliffs or walls over peaks itself. This property sometimes diverts jut from
+the traditional definition of mountain peaks, especially in such cases:</p>
+<ul data-line="17" class="code-line" dir="auto">
+<li data-line="17" class="code-line" dir="auto">Peaks with high jut are not necessarily hard to climb. There usually exist routes that go around the steep cliff.</li>
+<li data-line="18" class="code-line" dir="auto">Peaks with high jut are not necessarily noticeable from height, if they form relatively flat ridges with nearby peaks.</li>
+</ul>
+<p data-line="20" class="code-line" dir="auto">Equivalent Tower Height (ETH), arisen from the concept of "jut", works better in those aspects.
+Peaks with high ETH is not only guaranteed to look impressive from any direction, but also are hard to summit. Moreover,
+as an "averaged" version of jut, ETH is more resistant to noise in local terrain height data, allowing the computation
+from civil-precision data.</p>
+<h2 data-line="25" class="code-line" dir="auto" id="jut-how-much-a-peak-rises-from-a-ground-observer" tabindex="-1">Jut: how much a peak rises from a ground observer</h2>
+<p data-line="26" class="code-line" dir="auto">Jut of a peak P is defined as the maximum angle-reduced height of P above all surrounding points:</p>
+<p data-line="28" class="code-line" dir="auto"><code>jut(P) = max[h * sin(θ)] for any chosen Q</code></p>
+<p data-line="30" class="code-line" dir="auto"><img src="jut.png" alt="jut_image" title="Jut" data-src="jut.png"></p>
+<h2 data-line="32" class="code-line" dir="auto" id="eth-jut-applied-to-a-cone-fitted-peak" tabindex="-1">ETH: Jut applied to a cone-fitted peak</h2>
+<p data-line="33" class="code-line" dir="auto">By definition, jut depends on the optimal observation location. To overcome this, we first fit a mountain peak to a perfect cone, then compute the cone's jut.
+As a cone is fully symmetric by rotation, the problem is reduced from 2-dimensional to a 1-dimensional.</p>
+<p data-line="36" class="code-line" dir="auto">Now the question is, how do we fit a peak (precisely speaking, a certain section below the summit) to a cone?</p>
+<p data-line="38" class="code-line" dir="auto">There exist many methods where an irregular shape fits into a ideal geometry, such as volume-based, cross-section-based,
+rotational-inertia-based. For simplicity, cross-section-based fitting is adopted in this work.</p>
+<pre><code data-line="40" class="code-line" dir="auto">    Init: Eth &lt;- 0
+    for vertical_drop := 1..elevation below the summit,
+        A &lt;- Maximum connected area (including peak) with elevation &gt;= (summit_elevation - vertical_drop)
+        S &lt;- area(A)
+        R &lt;- sqrt(S / PI)
+        Alpha &lt;- arctan(vertical_drop / R)
+        AngleReducedHeight &lt;- vertical_drop * sin(θ)
+        Eth &lt;- max(Eth, AngleReducedHeight)
+    Return: Eth 
+</code></pre>
+<p data-line="51" class="code-line" dir="auto"><img src="eth.png" alt="eth_image" title="ETH" data-src="eth.png"></p>
+<p data-line="53" class="code-line" dir="auto">The name "Equivalent Tower Height", comes from its close relationship with human-made towers. A perfectly-slim tower,
+with nearly-zero cross-section along its entire height, receives ETH identical to its height. Therefore, some of the tallest
+human-made structures have ETH comparable to major mountain peaks.</p>
+<h2 data-line="57" class="code-line" dir="auto" id="evaluation-with-real-world-data" tabindex="-1">Evaluation with real-world data</h2>
+<h3 data-line="58" class="code-line" dir="auto" id="elevation-dataset" tabindex="-1">Elevation dataset</h3>
+<p data-line="59" class="code-line" dir="auto">We choose ASTER Global Digital Elevation Model V003 due to its public accessibility at earthdata.nasa.gov.
+The dataset features a spatial resolution of 1 arc second (~30m). Although it claims to have a elevation precision
+of 16 meters, it's observed to be much poorer in areas with rugged terrian. For instance, the highest point in the
+dataset is only 8802m, about 50m below Mt Everest's true elevation 8849m. If a peak measures 5%
+lower than its true elevation, we will skip its evaluation to avoid wrong results.</p>
+<h3 data-line="65" class="code-line" dir="auto" id="compute-maximum-connected-area-from-grid-samples" tabindex="-1">Compute maximum connected area from grid samples</h3>
+<p data-line="66" class="code-line" dir="auto">We perform a DFS or BFS starting from the peak point to get set S, where every point in S is
+higher or equal to elevation_threshold = peak_elevation - elevation_drop.</p>
+<p data-line="69" class="code-line" dir="auto">All quads Q containing at least 1 vertex in S is taken into consideration:</p>
+<ol data-line="70" class="code-line" dir="auto">
+<li data-line="70" class="code-line" dir="auto">If all 4 vertice are in S, count Q as a full grid.</li>
+<li data-line="71" class="code-line" dir="auto">Otherwise, perform an interpolation on two of its edges and form a straight line across Q with elevation == elevation_threshold.
+Count Q as a partial grid sliced by the straight line.</li>
+</ol>
+<p data-line="74" class="code-line" dir="auto">This figure shows how we define Mt Everest's area above 8750m by interpolating a contour.
+Elevation data is for illustration purpose only.
+<img src="area_estimation.png" alt="area_image" title="Area" data-src="area_estimation.png"></p>
+<p data-line="78" class="code-line" dir="auto">Once we know the number of grids, we can multiply it by a single grid (1 by 1 arc second)'s area, which only depends on latitude.</p>
+<p data-line="80" class="code-line" dir="auto">This calculation method provides relatively accurate estimation at reasonable implementation complexity.</p>
+<h3 data-line="82" class="code-line" dir="auto" id="peak-selection" tabindex="-1">Peak selection</h3>
+<p data-line="83" class="code-line" dir="auto">We use two lists on wikipedia, providing 213 peaks combined.</p>
+<ol data-line="84" class="code-line" dir="auto">
+<li data-line="84" class="code-line" dir="auto"><a href="https://en.wikipedia.org/wiki/List_of_mountain_peaks_by_prominence" data-href="https://en.wikipedia.org/wiki/List_of_mountain_peaks_by_prominence">https://en.wikipedia.org/wiki/List_of_mountain_peaks_by_prominence</a></li>
+<li data-line="85" class="code-line" dir="auto"><a href="https://en.wikipedia.org/wiki/List_of_highest_mountains_on_Earth" data-href="https://en.wikipedia.org/wiki/List_of_highest_mountains_on_Earth">https://en.wikipedia.org/wiki/List_of_highest_mountains_on_Earth</a></li>
+</ol>
+<h3 data-line="87" class="code-line" dir="auto" id="cut-off" tabindex="-1">Cut-off</h3>
+<p data-line="88" class="code-line" dir="auto">Although there's no limit how far vertical drop can extend to, we are not interested in areas too far from the summit,
+where the cone has become too flat to result in high ETH values. We increase vertical drop until the following criteria is reached:</p>
+<ol data-line="90" class="code-line" dir="auto">
+<li data-line="90" class="code-line" dir="auto">Connected area reaches 30 kilometers from peak;</li>
+<li data-line="91" class="code-line" dir="auto">sin(Alpha) &lt; 0.30 AND vertical_drop &gt;= 1000 meters.</li>
+</ol>
+<p data-line="93" class="code-line" dir="auto">Additionally, vertical drop starts from 300 meters to lower the effect of data noise around the summit,
+and increases at the step of 200 meters.
+These thresholds work well for ultra prominent and high peaks, but need be different for lower and more flat ones.</p>
+<h2 data-line="97" class="code-line" dir="auto" id="result" tabindex="-1">Result</h2>
+<h3 data-line="98" class="code-line" dir="auto" id="tier-zero-club-overall-maximum" tabindex="-1">Tier Zero Club (Overall Maximum)</h3>
+<blockquote data-line="99" class="code-line" dir="auto">
+<p data-line="99" class="code-line" dir="auto">Noticeably, Alaska stands out from the rest of ~8000m giants.</p>
+</blockquote>
+<table data-line="101" class="code-line" dir="auto">
+<thead data-line="101" class="code-line" dir="auto">
+<tr data-line="101" class="code-line" dir="auto">
+<th>Name</th>
+<th>ETH</th>
+<th>True Elevation (observation error)</th>
+</tr>
+</thead>
+<tbody data-line="103" class="code-line" dir="auto">
+<tr data-line="103" class="code-line" dir="auto">
+<td>Denali/Mckinley</td>
+<td>1546</td>
+<td>6190 (-0.3%)</td>
+</tr>
+<tr data-line="104" class="code-line" dir="auto">
+<td>K2/Qogir</td>
+<td>1511</td>
+<td>8611 (-0.8%)</td>
+</tr>
+<tr data-line="105" class="code-line" dir="auto">
+<td>Dhaulagiri I</td>
+<td>1342</td>
+<td>8167 (-0.3%)</td>
+</tr>
+<tr data-line="106" class="code-line" dir="auto">
+<td>Mount Saint Elias</td>
+<td>1306</td>
+<td>5489 (-0.2%)</td>
+</tr>
+<tr data-line="107" class="code-line" dir="auto">
+<td>Nanga Parbat</td>
+<td>1227</td>
+<td>8126 (-0.7%)</td>
+</tr>
+<tr data-line="108" class="code-line" dir="auto">
+<td>Rakaposhi</td>
+<td>1220</td>
+<td>7788 (-1.6%)</td>
+</tr>
+</tbody>
+</table>
+<h3 data-line="110" class="code-line" dir="auto" id="front-runner-within-each-elevation-drop-range" tabindex="-1">Front runner within each elevation drop range</h3>
+<blockquote data-line="111" class="code-line" dir="auto">
+<p data-line="111" class="code-line" dir="auto">Those peaks are the steepest among those of similar scale.</p>
+</blockquote>
+<table data-line="113" class="code-line" dir="auto">
+<thead data-line="113" class="code-line" dir="auto">
+<tr data-line="113" class="code-line" dir="auto">
+<th>Name</th>
+<th>Elevation Range</th>
+<th>Max slope angle (degree) within range</th>
+<th>True Elevation (observation error)</th>
+</tr>
+</thead>
+<tbody data-line="115" class="code-line" dir="auto">
+<tr data-line="115" class="code-line" dir="auto">
+<td>Baintha Brakk/The Orge</td>
+<td>500~1300</td>
+<td>50</td>
+<td>7285 (-1.4%)</td>
+</tr>
+<tr data-line="116" class="code-line" dir="auto">
+<td>K2/Qogir</td>
+<td>1300~2400</td>
+<td>49</td>
+<td>8611 (-0.8%)</td>
+</tr>
+<tr data-line="117" class="code-line" dir="auto">
+<td>Denali/Mckinley</td>
+<td>2400~2900</td>
+<td>34</td>
+<td>6190 (-0.3%)</td>
+</tr>
+<tr data-line="118" class="code-line" dir="auto">
+<td>Nange Parbat</td>
+<td>&gt; 2900</td>
+<td>25</td>
+<td>8126 (-0.7%)</td>
+</tr>
+</tbody>
+</table>
+<h3 data-line="120" class="code-line" dir="auto" id="steepest--last-700m-till-summit" tabindex="-1">Steepest @ last 700m till summit</h3>
+<blockquote data-line="121" class="code-line" dir="auto">
+<p data-line="121" class="code-line" dir="auto">These peaks only welcome the most skilled climbers.
+No surprise, Karakoram dominates.</p>
+</blockquote>
+<table data-line="124" class="code-line" dir="auto">
+<thead data-line="124" class="code-line" dir="auto">
+<tr data-line="124" class="code-line" dir="auto">
+<th>Name</th>
+<th>Slope angle (degree)</th>
+<th>True Elevation (observation error)</th>
+</tr>
+</thead>
+<tbody data-line="126" class="code-line" dir="auto">
+<tr data-line="126" class="code-line" dir="auto">
+<td>Baintha Brakk/The Orge</td>
+<td>50</td>
+<td>7285 (-1.4%)</td>
+</tr>
+<tr data-line="127" class="code-line" dir="auto">
+<td>K1/Masherbrum</td>
+<td>49</td>
+<td>7821 (-0.8%)</td>
+</tr>
+<tr data-line="128" class="code-line" dir="auto">
+<td>K2/Qogir</td>
+<td>49</td>
+<td>8611 (-0.8%)</td>
+</tr>
+<tr data-line="129" class="code-line" dir="auto">
+<td>Nanda Devi</td>
+<td>48</td>
+<td>7816 (-0.3%)</td>
+</tr>
+<tr data-line="130" class="code-line" dir="auto">
+<td>Muztagh Tower</td>
+<td>45</td>
+<td>7276 (-3.6%)</td>
+</tr>
+</tbody>
+</table>
+<h3 data-line="132" class="code-line" dir="auto" id="how-steepness-changes-with-elevation-drop" tabindex="-1">How steepness changes with elevation drop</h3>
+<p data-line="133" class="code-line" dir="auto">The following plot has X axis inversed: <code>1 / sin(θ)</code>. Points with greater <strong>slope</strong>, i.e.
+closer to top-left area, reaches greater ETH.</p>
+<p data-line="136" class="code-line" dir="auto">Peaks less than 900 ETH are partially shown due to tidiness
+consideration. Please refer to the appendix for the full list.</p>
+<p data-line="139" class="code-line" dir="auto"><img src="eth_graph.png" alt="eth_graph" title="ETH Graph" data-src="eth_graph.png"></p>
+<h2 data-line="141" class="code-line" dir="auto" id="appendix" tabindex="-1">Appendix</h2>
+<h3 data-line="142" class="code-line" dir="auto" id="maximum-connected-area-evaluation-for-mteverest-at-different-elevations" tabindex="-1">Maximum connected area evaluation for Mt.Everest at different elevations</h3>
+<p data-line="143" class="code-line" dir="auto"><img src="area_calc.png" alt="area_calc" title="Area Calc" data-src="area_calc.png"></p>
+<h3 data-line="145" class="code-line" dir="auto" id="full-list-of-calculated-eth-ranked-by-elevation" tabindex="-1">Full list of calculated ETH, ranked by elevation</h3>
+<table data-line="146" class="code-line" dir="auto">
+<thead data-line="146" class="code-line" dir="auto">
+<tr data-line="146" class="code-line" dir="auto">
+<th>Peak</th>
+<th>ETH</th>
+<th>Latitude</th>
+<th>Longitude</th>
+<th>TrueElevation</th>
+<th>ObservedElevation</th>
+<th>sin(θ)@300</th>
+<th>500</th>
+<th>700</th>
+<th>900</th>
+<th>1100</th>
+<th>1300</th>
+<th>1500</th>
+<th>1700</th>
+<th>1900</th>
+<th>2100</th>
+<th>2300</th>
+<th>2500</th>
+<th>2700</th>
+<th>2900</th>
+<th>3100</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody data-line="148" class="code-line" dir="auto">
+<tr data-line="148" class="code-line" dir="auto">
+<td>Mount Everest</td>
+<td>1001</td>
+<td>27.9881</td>
+<td>86.925</td>
+<td>8848</td>
+<td>8802</td>
+<td>0.60756109</td>
+<td>0.622637542</td>
+<td>0.624929977</td>
+<td>0.623881295</td>
+<td>0.547646492</td>
+<td>0.54516749</td>
+<td>0.5397619</td>
+<td>0.50445177</td>
+<td>0.484809739</td>
+<td>0.476463911</td>
+<td>0.431870273</td>
+<td>0.357831109</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="149" class="code-line" dir="auto">
+<td>K2</td>
+<td>1511</td>
+<td>35.88138889</td>
+<td>76.51333333</td>
+<td>8611</td>
+<td>8546</td>
+<td>0.75185289</td>
+<td>0.751615566</td>
+<td>0.751909776</td>
+<td>0.737112555</td>
+<td>0.722039413</td>
+<td>0.725204364</td>
+<td>0.727647516</td>
+<td>0.731442571</td>
+<td>0.726905966</td>
+<td>0.719656381</td>
+<td>0.63324784</td>
+<td>0.52482485</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="150" class="code-line" dir="auto">
+<td>Kangchenjunga</td>
+<td>935</td>
+<td>27.70333333</td>
+<td>88.1475</td>
+<td>8586</td>
+<td>8552</td>
+<td>0.822068687</td>
+<td>0.708393516</td>
+<td>0.588507417</td>
+<td>0.523582767</td>
+<td>0.490785381</td>
+<td>0.491875189</td>
+<td>0.495225614</td>
+<td>0.499613878</td>
+<td>0.488503675</td>
+<td>0.436809127</td>
+<td>0.406408156</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="151" class="code-line" dir="auto">
+<td>Lhotse</td>
+<td>776</td>
+<td>27.96166667</td>
+<td>86.93305556</td>
+<td>8516</td>
+<td>8447</td>
+<td>0.691358871</td>
+<td>0.625479749</td>
+<td>0.398900296</td>
+<td>0.422674228</td>
+<td>0.436720274</td>
+<td>0.41922298</td>
+<td>0.410951747</td>
+<td>0.410592847</td>
+<td>0.408359867</td>
+<td>0.320098819</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="152" class="code-line" dir="auto">
+<td>Makalu</td>
+<td>949</td>
+<td>27.88972222</td>
+<td>87.08888889</td>
+<td>8485</td>
+<td>8252</td>
+<td>0.515463466</td>
+<td>0.516820253</td>
+<td>0.518683375</td>
+<td>0.487965882</td>
+<td>0.447510035</td>
+<td>0.44882229</td>
+<td>0.466082459</td>
+<td>0.471982144</td>
+<td>0.475011597</td>
+<td>0.451900793</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="153" class="code-line" dir="auto">
+<td>Cho Oyu</td>
+<td>640</td>
+<td>28.09416667</td>
+<td>86.66083333</td>
+<td>8188</td>
+<td>8174</td>
+<td>0.518893075</td>
+<td>0.56182065</td>
+<td>0.497630101</td>
+<td>0.499679255</td>
+<td>0.483009286</td>
+<td>0.429825026</td>
+<td>0.426386706</td>
+<td>0.366084761</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="154" class="code-line" dir="auto">
+<td>Dhaulagiri I</td>
+<td>1342</td>
+<td>28.69666667</td>
+<td>83.49305556</td>
+<td>8167</td>
+<td>8146</td>
+<td>0.503259162</td>
+<td>0.527936083</td>
+<td>0.567982683</td>
+<td>0.600593175</td>
+<td>0.622242801</td>
+<td>0.630881635</td>
+<td>0.63812181</td>
+<td>0.642518894</td>
+<td>0.645409227</td>
+<td>0.638933811</td>
+<td>0.541664705</td>
+<td>0.510841414</td>
+<td>0.495868451</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="155" class="code-line" dir="auto">
+<td>Manaslu</td>
+<td>850</td>
+<td>28.55</td>
+<td>84.55972222</td>
+<td>8163</td>
+<td>7942</td>
+<td>0.563657302</td>
+<td>0.578126113</td>
+<td>0.598448825</td>
+<td>0.604310877</td>
+<td>0.611740677</td>
+<td>0.490701752</td>
+<td>0.473987096</td>
+<td>0.448940553</td>
+<td>0.447272195</td>
+<td>0.336877135</td>
+<td>0.332465463</td>
+<td>0.313648011</td>
+<td>0.304093914</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="156" class="code-line" dir="auto">
+<td>Nanga Parbat</td>
+<td>1227</td>
+<td>35.23722222</td>
+<td>74.58916667</td>
+<td>8126</td>
+<td>8066</td>
+<td>0.554913246</td>
+<td>0.479269192</td>
+<td>0.458752365</td>
+<td>0.490511128</td>
+<td>0.515139702</td>
+<td>0.515292471</td>
+<td>0.511636163</td>
+<td>0.513887345</td>
+<td>0.502925813</td>
+<td>0.465702793</td>
+<td>0.45413468</td>
+<td>0.449398293</td>
+<td>0.44370015</td>
+<td>0.422943203</td>
+<td>0.335807007</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="157" class="code-line" dir="auto">
+<td>Annapurna I</td>
+<td>642</td>
+<td>28.59555556</td>
+<td>83.82027778</td>
+<td>8091</td>
+<td>7900</td>
+<td>0.428535029</td>
+<td>0.480656323</td>
+<td>0.468485708</td>
+<td>0.447360189</td>
+<td>0.452626943</td>
+<td>0.375408271</td>
+<td>0.36771993</td>
+<td>0.331652445</td>
+<td>0.309844402</td>
+<td>0.305669344</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="158" class="code-line" dir="auto">
+<td>Gasherbrum I / K5</td>
+<td>666</td>
+<td>35.72444444</td>
+<td>76.69638889</td>
+<td>8080</td>
+<td>7991</td>
+<td>0.582394622</td>
+<td>0.600361271</td>
+<td>0.600637585</td>
+<td>0.596906081</td>
+<td>0.569060152</td>
+<td>0.465363518</td>
+<td>0.443860697</td>
+<td>0.35227769</td>
+<td>0.300223504</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="159" class="code-line" dir="auto">
+<td>Broad Peak / K3</td>
+<td>990</td>
+<td>35.81055556</td>
+<td>76.56833333</td>
+<td>8051</td>
+<td>7999</td>
+<td>0.770789533</td>
+<td>0.664298766</td>
+<td>0.640129671</td>
+<td>0.619213858</td>
+<td>0.622581348</td>
+<td>0.627860507</td>
+<td>0.604289975</td>
+<td>0.582075036</td>
+<td>0.301934991</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="160" class="code-line" dir="auto">
+<td>Gasherbrum II / K4</td>
+<td>690</td>
+<td>35.75777778</td>
+<td>76.65333333</td>
+<td>8035</td>
+<td>7968</td>
+<td>0.687536457</td>
+<td>0.559210097</td>
+<td>0.576161713</td>
+<td>0.513780932</td>
+<td>0.517431555</td>
+<td>0.530939297</td>
+<td>0.362236261</td>
+<td>0.340497131</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="161" class="code-line" dir="auto">
+<td>Shishapangma</td>
+<td>662</td>
+<td>28.35333333</td>
+<td>85.77861111</td>
+<td>8027</td>
+<td>7945</td>
+<td>0.446702052</td>
+<td>0.499134312</td>
+<td>0.461054962</td>
+<td>0.446948154</td>
+<td>0.436389426</td>
+<td>0.409190148</td>
+<td>0.384680617</td>
+<td>0.368515018</td>
+<td>0.348326158</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="162" class="code-line" dir="auto">
+<td>Gyachung Kang</td>
+<td>593</td>
+<td>28.09805556</td>
+<td>86.745</td>
+<td>7952</td>
+<td>7936</td>
+<td>0.544669255</td>
+<td>0.603498403</td>
+<td>0.647064023</td>
+<td>0.658833224</td>
+<td>0.363607881</td>
+<td>0.369280169</td>
+<td>0.313492581</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="163" class="code-line" dir="auto">
+<td>Annapurna II</td>
+<td>960</td>
+<td>28.53472222</td>
+<td>84.12194444</td>
+<td>7937</td>
+<td>7921</td>
+<td>0.5704073</td>
+<td>0.591758507</td>
+<td>0.513633654</td>
+<td>0.49561453</td>
+<td>0.48025447</td>
+<td>0.471347528</td>
+<td>0.415976259</td>
+<td>0.407085673</td>
+<td>0.4087411</td>
+<td>0.410429118</td>
+<td>0.417353794</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="164" class="code-line" dir="auto">
+<td>Gasherbrum IV</td>
+<td>644</td>
+<td>35.76055556</td>
+<td>76.61611111</td>
+<td>7932</td>
+<td>7796</td>
+<td>0.684679358</td>
+<td>0.722923118</td>
+<td>0.434897262</td>
+<td>0.451160468</td>
+<td>0.474166375</td>
+<td>0.495627631</td>
+<td>0.316132161</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="165" class="code-line" dir="auto">
+<td>Himalchuli</td>
+<td>732</td>
+<td>28.43666667</td>
+<td>84.63972222</td>
+<td>7893</td>
+<td>7769</td>
+<td>0.505197616</td>
+<td>0.530515533</td>
+<td>0.448238291</td>
+<td>0.463396853</td>
+<td>0.46792753</td>
+<td>0.471549044</td>
+<td>0.469234263</td>
+<td>0.430407265</td>
+<td>0.311533187</td>
+<td>0.309567337</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="166" class="code-line" dir="auto">
+<td>Distaghil Sar</td>
+<td>549</td>
+<td>36.32583333</td>
+<td>75.18777778</td>
+<td>7884</td>
+<td>7846</td>
+<td>0.542764214</td>
+<td>0.533277952</td>
+<td>0.552224674</td>
+<td>0.504710575</td>
+<td>0.49900825</td>
+<td>0.388240373</td>
+<td>0.339908573</td>
+<td>0.320590606</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="167" class="code-line" dir="auto">
+<td>Ngadi Chuli</td>
+<td>E</td>
+<td>28.50333333</td>
+<td>84.56666667</td>
+<td>7871</td>
+<td>7247</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="168" class="code-line" dir="auto">
+<td>Khunyang Chhish</td>
+<td>679</td>
+<td>36.20527778</td>
+<td>75.20777778</td>
+<td>7823</td>
+<td>7817</td>
+<td>0.678433564</td>
+<td>0.698808366</td>
+<td>0.661534988</td>
+<td>0.620222892</td>
+<td>0.61354704</td>
+<td>0.491013905</td>
+<td>0.452607012</td>
+<td>0.374786588</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="169" class="code-line" dir="auto">
+<td>Masherbrum / K1</td>
+<td>1057</td>
+<td>35.64111111</td>
+<td>76.30583333</td>
+<td>7821</td>
+<td>7758</td>
+<td>0.767749299</td>
+<td>0.759672547</td>
+<td>0.753084535</td>
+<td>0.723105717</td>
+<td>0.677664149</td>
+<td>0.624193231</td>
+<td>0.611539601</td>
+<td>0.580937992</td>
+<td>0.545668361</td>
+<td>0.503559127</td>
+<td>0.459382055</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="170" class="code-line" dir="auto">
+<td>Nanda Devi</td>
+<td>1078</td>
+<td>30.37583333</td>
+<td>79.97083333</td>
+<td>7816</td>
+<td>7795</td>
+<td>0.678888778</td>
+<td>0.722026397</td>
+<td>0.743811256</td>
+<td>0.691929448</td>
+<td>0.675723178</td>
+<td>0.660748618</td>
+<td>0.653283882</td>
+<td>0.634106873</td>
+<td>0.382503249</td>
+<td>0.30820064</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="171" class="code-line" dir="auto">
+<td>Chomo Lonzo</td>
+<td>554</td>
+<td>27.93055556</td>
+<td>87.10777778</td>
+<td>7804</td>
+<td>7773</td>
+<td>0.534984881</td>
+<td>0.550881425</td>
+<td>0.281769334</td>
+<td>0.317031099</td>
+<td>0.349055085</td>
+<td>0.366337706</td>
+<td>0.369380655</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="172" class="code-line" dir="auto">
+<td>Batura Sar</td>
+<td>584</td>
+<td>36.51027778</td>
+<td>74.5225</td>
+<td>7795</td>
+<td>7748</td>
+<td>0.335004452</td>
+<td>0.36902785</td>
+<td>0.379488191</td>
+<td>0.407555468</td>
+<td>0.359032097</td>
+<td>0.36279894</td>
+<td>0.321636451</td>
+<td>0.309437569</td>
+<td>0.307467574</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="173" class="code-line" dir="auto">
+<td>Rakaposhi</td>
+<td>1220</td>
+<td>36.1425</td>
+<td>74.48944444</td>
+<td>7788</td>
+<td>7663</td>
+<td>0.566153625</td>
+<td>0.555192515</td>
+<td>0.561899761</td>
+<td>0.5639263</td>
+<td>0.576357174</td>
+<td>0.576543551</td>
+<td>0.57651572</td>
+<td>0.549957134</td>
+<td>0.544249027</td>
+<td>0.537200496</td>
+<td>0.530290989</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="174" class="code-line" dir="auto">
+<td>Namcha Barwa</td>
+<td>E</td>
+<td>29.63111111</td>
+<td>95.05527778</td>
+<td>7782</td>
+<td>7323</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="175" class="code-line" dir="auto">
+<td>Kanjut Sar</td>
+<td>924</td>
+<td>36.20555556</td>
+<td>75.41694444</td>
+<td>7760</td>
+<td>7734</td>
+<td>0.591268682</td>
+<td>0.658141806</td>
+<td>0.667547056</td>
+<td>0.66225215</td>
+<td>0.661566719</td>
+<td>0.638210001</td>
+<td>0.615964966</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="176" class="code-line" dir="auto">
+<td>Kamet</td>
+<td>660</td>
+<td>30.92</td>
+<td>79.59166667</td>
+<td>7756</td>
+<td>7707</td>
+<td>0.624053073</td>
+<td>0.657315492</td>
+<td>0.588302861</td>
+<td>0.594371675</td>
+<td>0.600431853</td>
+<td>0.434340249</td>
+<td>0.341734657</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="177" class="code-line" dir="auto">
+<td>Dhaulagiri II</td>
+<td>459</td>
+<td>28.76277778</td>
+<td>83.38833333</td>
+<td>7751</td>
+<td>7752</td>
+<td>0.459599915</td>
+<td>0.468624536</td>
+<td>0.366135975</td>
+<td>0.381402104</td>
+<td>0.311491007</td>
+<td>0.30863045</td>
+<td>0.306267774</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="178" class="code-line" dir="auto">
+<td>Saltoro Kangri / K10</td>
+<td>1035</td>
+<td>35.39916667</td>
+<td>76.84805556</td>
+<td>7742</td>
+<td>7708</td>
+<td>0.570274881</td>
+<td>0.589887645</td>
+<td>0.61608196</td>
+<td>0.637979935</td>
+<td>0.650619118</td>
+<td>0.664187358</td>
+<td>0.670932975</td>
+<td>0.608888959</td>
+<td>0.311043787</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="179" class="code-line" dir="auto">
+<td>Jannu</td>
+<td>499</td>
+<td>27.68222222</td>
+<td>88.04444444</td>
+<td>7711</td>
+<td>7346</td>
+<td>0.661899088</td>
+<td>0.518453506</td>
+<td>0.53124105</td>
+<td>0.554352166</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="180" class="code-line" dir="auto">
+<td>Tirich Mir</td>
+<td>897</td>
+<td>36.25527778</td>
+<td>71.84166667</td>
+<td>7708</td>
+<td>7680</td>
+<td>0.492160574</td>
+<td>0.508388979</td>
+<td>0.527978573</td>
+<td>0.546447534</td>
+<td>0.564008771</td>
+<td>0.56247651</td>
+<td>0.547193478</td>
+<td>0.527829454</td>
+<td>0.435055549</td>
+<td>0.40477408</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="181" class="code-line" dir="auto">
+<td>Gurla Mandhata</td>
+<td>686</td>
+<td>30.43861111</td>
+<td>81.29666667</td>
+<td>7694</td>
+<td>7684</td>
+<td>0.432670048</td>
+<td>0.449668766</td>
+<td>0.487130615</td>
+<td>0.51421093</td>
+<td>0.516452719</td>
+<td>0.510752323</td>
+<td>0.457414123</td>
+<td>0.339449821</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="182" class="code-line" dir="auto">
+<td>Saser Kangri I / K22</td>
+<td>529</td>
+<td>34.86666667</td>
+<td>77.7525</td>
+<td>7672</td>
+<td>7651</td>
+<td>0.577372709</td>
+<td>0.596907131</td>
+<td>0.5130565</td>
+<td>0.507551851</td>
+<td>0.423859923</td>
+<td>0.406606519</td>
+<td>0.32148096</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="183" class="code-line" dir="auto">
+<td>Chogolisa</td>
+<td>581</td>
+<td>35.61305556</td>
+<td>76.57472222</td>
+<td>7665</td>
+<td>7594</td>
+<td>0.539848454</td>
+<td>0.590699243</td>
+<td>0.595242149</td>
+<td>0.560182347</td>
+<td>0.494078206</td>
+<td>0.44725397</td>
+<td>0.339232323</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="184" class="code-line" dir="auto">
+<td>Kongur Tagh</td>
+<td>645</td>
+<td>38.59333333</td>
+<td>75.31333333</td>
+<td>7649</td>
+<td>7629</td>
+<td>0.42720654</td>
+<td>0.462939988</td>
+<td>0.44208493</td>
+<td>0.45636161</td>
+<td>0.317404238</td>
+<td>0.314120917</td>
+<td>0.318851361</td>
+<td>0.324282142</td>
+<td>0.311939155</td>
+<td>0.307255988</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="185" class="code-line" dir="auto">
+<td>Shispare</td>
+<td>594</td>
+<td>36.44055556</td>
+<td>74.68083333</td>
+<td>7611</td>
+<td>7562</td>
+<td>0.731317502</td>
+<td>0.71345279</td>
+<td>0.664882619</td>
+<td>0.659685074</td>
+<td>0.51400539</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="186" class="code-line" dir="auto">
+<td>Trivor</td>
+<td>498</td>
+<td>36.2875</td>
+<td>75.085</td>
+<td>7577</td>
+<td>7607</td>
+<td>0.613578907</td>
+<td>0.617913783</td>
+<td>0.625499275</td>
+<td>0.553719844</td>
+<td>0.324733449</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="187" class="code-line" dir="auto">
+<td>Gangkhar Puensum</td>
+<td>516</td>
+<td>28.04722222</td>
+<td>90.45527778</td>
+<td>7570</td>
+<td>7525</td>
+<td>0.347292725</td>
+<td>0.361836649</td>
+<td>0.389762711</td>
+<td>0.39207063</td>
+<td>0.385740001</td>
+<td>0.368237047</td>
+<td>0.343783432</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="188" class="code-line" dir="auto">
+<td>Gongga Shan / Minya Konka</td>
+<td>892</td>
+<td>29.59527778</td>
+<td>101.8797222</td>
+<td>7556</td>
+<td>7473</td>
+<td>0.650474339</td>
+<td>0.678976466</td>
+<td>0.685610354</td>
+<td>0.69030626</td>
+<td>0.682105926</td>
+<td>0.622950293</td>
+<td>0.594453166</td>
+<td>0.440754395</td>
+<td>0.373805604</td>
+<td>0.302092721</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="189" class="code-line" dir="auto">
+<td>Annapurna III</td>
+<td>323</td>
+<td>28.585</td>
+<td>83.99</td>
+<td>7555</td>
+<td>7529</td>
+<td>0.487121212</td>
+<td>0.499781857</td>
+<td>0.461891166</td>
+<td>0.276295611</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="190" class="code-line" dir="auto">
+<td>Skyang Kangri</td>
+<td>657</td>
+<td>35.92638889</td>
+<td>76.5675</td>
+<td>7545</td>
+<td>7487</td>
+<td>0.5586361</td>
+<td>0.586423832</td>
+<td>0.61586525</td>
+<td>0.59143198</td>
+<td>0.597022471</td>
+<td>0.340696035</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="191" class="code-line" dir="auto">
+<td>Changtse</td>
+<td>F</td>
+<td>28.02472222</td>
+<td>86.91416667</td>
+<td>7543</td>
+<td>7798</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="192" class="code-line" dir="auto">
+<td>Kula Kangri</td>
+<td>630</td>
+<td>28.22694444</td>
+<td>90.61638889</td>
+<td>7538</td>
+<td>7455</td>
+<td>0.49635705</td>
+<td>0.509183649</td>
+<td>0.546344229</td>
+<td>0.568022516</td>
+<td>0.560816612</td>
+<td>0.445373184</td>
+<td>0.420232377</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="193" class="code-line" dir="auto">
+<td>Kongur Tiube</td>
+<td>271</td>
+<td>38.61583333</td>
+<td>75.19583333</td>
+<td>7530</td>
+<td>7519</td>
+<td>0.435801261</td>
+<td>0.425055075</td>
+<td>0.387712826</td>
+<td>0.286526666</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="194" class="code-line" dir="auto">
+<td>Mamostong Kangri</td>
+<td>640</td>
+<td>35.14194444</td>
+<td>77.5775</td>
+<td>7516</td>
+<td>7416</td>
+<td>0.497665474</td>
+<td>0.5207277</td>
+<td>0.560658089</td>
+<td>0.584866923</td>
+<td>0.581957968</td>
+<td>0.358819974</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="195" class="code-line" dir="auto">
+<td>Saser Kangri II E</td>
+<td>759</td>
+<td>34.80472222</td>
+<td>77.80666667</td>
+<td>7513</td>
+<td>7486</td>
+<td>0.506155322</td>
+<td>0.551583839</td>
+<td>0.564382979</td>
+<td>0.576747348</td>
+<td>0.579510813</td>
+<td>0.583917536</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="196" class="code-line" dir="auto">
+<td>Muztagh Ata</td>
+<td>748</td>
+<td>38.27583333</td>
+<td>75.11611111</td>
+<td>7546</td>
+<td>7509</td>
+<td>0.439238217</td>
+<td>0.451251625</td>
+<td>0.422329787</td>
+<td>0.435665894</td>
+<td>0.450297766</td>
+<td>0.46477365</td>
+<td>0.382922292</td>
+<td>0.3793373</td>
+<td>0.370405268</td>
+<td>0.343145856</td>
+<td>0.325252821</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="197" class="code-line" dir="auto">
+<td>Ismoil Somoni Peak</td>
+<td>701</td>
+<td>38.94305556</td>
+<td>72.01583333</td>
+<td>7495</td>
+<td>7453</td>
+<td>0.58654716</td>
+<td>0.610508861</td>
+<td>0.589838822</td>
+<td>0.572860233</td>
+<td>0.527307677</td>
+<td>0.518889805</td>
+<td>0.435801936</td>
+<td>0.412175716</td>
+<td>0.327871994</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="198" class="code-line" dir="auto">
+<td>Saser Kangri III</td>
+<td>439</td>
+<td>34.84555556</td>
+<td>77.785</td>
+<td>7495</td>
+<td>7443</td>
+<td>0.628015555</td>
+<td>0.64311622</td>
+<td>0.627217232</td>
+<td>0.354549572</td>
+<td>0.350492039</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="199" class="code-line" dir="auto">
+<td>Noshaq</td>
+<td>618</td>
+<td>36.43222222</td>
+<td>71.82861111</td>
+<td>7492</td>
+<td>7475</td>
+<td>0.453816832</td>
+<td>0.505592794</td>
+<td>0.440984834</td>
+<td>0.444046687</td>
+<td>0.454900538</td>
+<td>0.347882272</td>
+<td>0.342026768</td>
+<td>0.338875553</td>
+<td>0.325512107</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="200" class="code-line" dir="auto">
+<td>Pumari Chhish</td>
+<td>434</td>
+<td>36.21138889</td>
+<td>75.25027778</td>
+<td>7492</td>
+<td>7391</td>
+<td>0.626243558</td>
+<td>0.59820154</td>
+<td>0.619771944</td>
+<td>0.35186506</td>
+<td>0.342654568</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="201" class="code-line" dir="auto">
+<td>Passu Sar</td>
+<td>256</td>
+<td>36.48777778</td>
+<td>74.58777778</td>
+<td>7476</td>
+<td>7470</td>
+<td>0.430966872</td>
+<td>0.479822188</td>
+<td>0.266158108</td>
+<td>0.284637336</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="202" class="code-line" dir="auto">
+<td>Yukshin Gardan Sar</td>
+<td>581</td>
+<td>36.25111111</td>
+<td>75.37472222</td>
+<td>7469</td>
+<td>7401</td>
+<td>0.596785336</td>
+<td>0.649360161</td>
+<td>0.683979582</td>
+<td>0.541494474</td>
+<td>0.528121255</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="203" class="code-line" dir="auto">
+<td>Teram Kangri I</td>
+<td>286</td>
+<td>35.58</td>
+<td>77.07833333</td>
+<td>7462</td>
+<td>7418</td>
+<td>0.407606676</td>
+<td>0.430200128</td>
+<td>0.407896067</td>
+<td>0.292984352</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="204" class="code-line" dir="auto">
+<td>Jongsong Peak</td>
+<td>442</td>
+<td>27.88166667</td>
+<td>88.13583333</td>
+<td>7462</td>
+<td>7455</td>
+<td>0.306489019</td>
+<td>0.336373201</td>
+<td>0.375459734</td>
+<td>0.370073724</td>
+<td>0.36263152</td>
+<td>0.339851682</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="205" class="code-line" dir="auto">
+<td>Malubiting</td>
+<td>489</td>
+<td>36.00333333</td>
+<td>74.87527778</td>
+<td>7458</td>
+<td>7305</td>
+<td>0.469523448</td>
+<td>0.478786169</td>
+<td>0.448670248</td>
+<td>0.434991936</td>
+<td>0.444837312</td>
+<td>0.371519853</td>
+<td>0.320541711</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="206" class="code-line" dir="auto">
+<td>Gangapurna</td>
+<td>331</td>
+<td>28.605</td>
+<td>83.96361111</td>
+<td>7455</td>
+<td>7436</td>
+<td>0.653116102</td>
+<td>0.662264078</td>
+<td>0.239581893</td>
+<td>0.256913146</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="207" class="code-line" dir="auto">
+<td>Jengish Chokusu / Pk Pobeda</td>
+<td>836</td>
+<td>42.03472222</td>
+<td>80.12972222</td>
+<td>7439</td>
+<td>7420</td>
+<td>0.54379777</td>
+<td>0.575024281</td>
+<td>0.538657586</td>
+<td>0.508085141</td>
+<td>0.464378596</td>
+<td>0.451893626</td>
+<td>0.449643752</td>
+<td>0.44495841</td>
+<td>0.439768084</td>
+<td>0.32018901</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="208" class="code-line" dir="auto">
+<td>K12</td>
+<td>757</td>
+<td>35.29583333</td>
+<td>77.02222222</td>
+<td>7428</td>
+<td>7418</td>
+<td>0.626890405</td>
+<td>0.58193451</td>
+<td>0.589645882</td>
+<td>0.597012105</td>
+<td>0.593572644</td>
+<td>0.582495299</td>
+<td>0.415277267</td>
+<td>0.317671063</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="209" class="code-line" dir="auto">
+<td>Yangra / Ganesh I</td>
+<td>712</td>
+<td>28.39138889</td>
+<td>85.12722222</td>
+<td>7422</td>
+<td>7345</td>
+<td>0.517349286</td>
+<td>0.564153228</td>
+<td>0.587837063</td>
+<td>0.593410497</td>
+<td>0.596897003</td>
+<td>0.548076208</td>
+<td>0.381332258</td>
+<td>0.365029797</td>
+<td>0.343174037</td>
+<td>0.319730152</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="210" class="code-line" dir="auto">
+<td>Sia Kangri</td>
+<td>256</td>
+<td>35.66333333</td>
+<td>76.76166667</td>
+<td>7422</td>
+<td>7388</td>
+<td>0.398808797</td>
+<td>0.45855467</td>
+<td>0.271456907</td>
+<td>0.284001324</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="211" class="code-line" dir="auto">
+<td>Momhil Sar</td>
+<td>592</td>
+<td>36.31777778</td>
+<td>75.03638889</td>
+<td>7414</td>
+<td>7389</td>
+<td>0.669481868</td>
+<td>0.679958728</td>
+<td>0.684958034</td>
+<td>0.658105442</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="212" class="code-line" dir="auto">
+<td>Kabru N</td>
+<td>254</td>
+<td>27.63388889</td>
+<td>88.11666667</td>
+<td>7412</td>
+<td>7350</td>
+<td>0.263192645</td>
+<td>0.317793155</td>
+<td>0.362745347</td>
+<td>0.203416029</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="213" class="code-line" dir="auto">
+<td>Skil Brum</td>
+<td>534</td>
+<td>35.85083333</td>
+<td>76.42861111</td>
+<td>7410</td>
+<td>7348</td>
+<td>0.630031788</td>
+<td>0.556382867</td>
+<td>0.583068262</td>
+<td>0.492502327</td>
+<td>0.485895842</td>
+<td>0.305593991</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="214" class="code-line" dir="auto">
+<td>Haramosh Peak</td>
+<td>792</td>
+<td>35.84</td>
+<td>74.8975</td>
+<td>7409</td>
+<td>7333</td>
+<td>0.606879581</td>
+<td>0.624583326</td>
+<td>0.621425932</td>
+<td>0.601800358</td>
+<td>0.532092163</td>
+<td>0.493150099</td>
+<td>0.48261974</td>
+<td>0.427636203</td>
+<td>0.416782058</td>
+<td>0.373212929</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="215" class="code-line" dir="auto">
+<td>Istor-o-Nal</td>
+<td>574</td>
+<td>36.37555556</td>
+<td>71.89833333</td>
+<td>7403</td>
+<td>7382</td>
+<td>0.356637645</td>
+<td>0.377534852</td>
+<td>0.410727629</td>
+<td>0.455015147</td>
+<td>0.320167049</td>
+<td>0.320871472</td>
+<td>0.323237432</td>
+<td>0.316241943</td>
+<td>0.301880206</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="216" class="code-line" dir="auto">
+<td>Ghent Kangri</td>
+<td>466</td>
+<td>35.51777778</td>
+<td>76.80055556</td>
+<td>7401</td>
+<td>7325</td>
+<td>0.410151848</td>
+<td>0.44045027</td>
+<td>0.43315825</td>
+<td>0.438584452</td>
+<td>0.423537096</td>
+<td>0.335346586</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="217" class="code-line" dir="auto">
+<td>Ultar</td>
+<td>377</td>
+<td>36.39083333</td>
+<td>74.71666667</td>
+<td>7388</td>
+<td>7313</td>
+<td>0.434861514</td>
+<td>0.492837018</td>
+<td>0.404580357</td>
+<td>0.419031874</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="218" class="code-line" dir="auto">
+<td>Rimo I</td>
+<td>377</td>
+<td>35.355</td>
+<td>77.36888889</td>
+<td>7385</td>
+<td>7216</td>
+<td>0.637867071</td>
+<td>0.611460197</td>
+<td>0.429281303</td>
+<td>0.418744185</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="219" class="code-line" dir="auto">
+<td>Churen Himal</td>
+<td>227</td>
+<td>28.73472222</td>
+<td>83.2175</td>
+<td>7385</td>
+<td>7396</td>
+<td>0.426460015</td>
+<td>0.453694938</td>
+<td>0.221388703</td>
+<td>0.226194505</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="220" class="code-line" dir="auto">
+<td>Teram Kangri III</td>
+<td>201</td>
+<td>35.59972222</td>
+<td>77.04805556</td>
+<td>7382</td>
+<td>7217</td>
+<td>0.503884592</td>
+<td>0.303722873</td>
+<td>0.231640086</td>
+<td>0.223381268</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="221" class="code-line" dir="auto">
+<td>Sherpi Kangri</td>
+<td>653</td>
+<td>35.46611111</td>
+<td>76.78138889</td>
+<td>7380</td>
+<td>7226</td>
+<td>0.615963926</td>
+<td>0.660784407</td>
+<td>0.613129343</td>
+<td>0.605565874</td>
+<td>0.593620111</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="222" class="code-line" dir="auto">
+<td>Labuche Kang</td>
+<td>276</td>
+<td>28.30416667</td>
+<td>86.35083333</td>
+<td>7367</td>
+<td>7324</td>
+<td>0.492196097</td>
+<td>0.485100193</td>
+<td>0.328005523</td>
+<td>0.30669994</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="223" class="code-line" dir="auto">
+<td>Kirat Chuli</td>
+<td>528</td>
+<td>27.78777778</td>
+<td>88.19527778</td>
+<td>7362</td>
+<td>7321</td>
+<td>0.567411075</td>
+<td>0.566537972</td>
+<td>0.583131512</td>
+<td>0.587171629</td>
+<td>0.401417759</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="224" class="code-line" dir="auto">
+<td>Saraghrar</td>
+<td>631</td>
+<td>36.5475</td>
+<td>72.115</td>
+<td>7349</td>
+<td>7319</td>
+<td>0.358622537</td>
+<td>0.408020828</td>
+<td>0.352367434</td>
+<td>0.363007692</td>
+<td>0.380614942</td>
+<td>0.372876986</td>
+<td>0.37397747</td>
+<td>0.371605331</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="225" class="code-line" dir="auto">
+<td>Jomolhari</td>
+<td>866</td>
+<td>27.82666667</td>
+<td>89.26777778</td>
+<td>7326</td>
+<td>7314</td>
+<td>0.641956146</td>
+<td>0.656543665</td>
+<td>0.669063499</td>
+<td>0.621188631</td>
+<td>0.618759788</td>
+<td>0.616408604</td>
+<td>0.577296556</td>
+<td>0.455906118</td>
+<td>0.399033554</td>
+<td>0.363240531</td>
+<td>0.327632406</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="226" class="code-line" dir="auto">
+<td>Chamlang</td>
+<td>536</td>
+<td>27.775</td>
+<td>86.97972222</td>
+<td>7321</td>
+<td>7288</td>
+<td>0.469019162</td>
+<td>0.408381278</td>
+<td>0.447036704</td>
+<td>0.473725546</td>
+<td>0.487620261</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="227" class="code-line" dir="auto">
+<td>Chongtar</td>
+<td>469</td>
+<td>35.91527778</td>
+<td>76.42916667</td>
+<td>7315</td>
+<td>7262</td>
+<td>0.398641861</td>
+<td>0.4505483</td>
+<td>0.487601186</td>
+<td>0.460700089</td>
+<td>0.426240282</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="228" class="code-line" dir="auto">
+<td>Baltoro Kangri</td>
+<td>473</td>
+<td>35.63916667</td>
+<td>76.67333333</td>
+<td>7312</td>
+<td>7288</td>
+<td>0.343145837</td>
+<td>0.387285214</td>
+<td>0.419649399</td>
+<td>0.429459602</td>
+<td>0.429738019</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="229" class="code-line" dir="auto">
+<td>Siguang Ri</td>
+<td>258</td>
+<td>28.14722222</td>
+<td>86.685</td>
+<td>7309</td>
+<td>7248</td>
+<td>0.503435231</td>
+<td>0.516377383</td>
+<td>0.183192589</td>
+<td>0.168530171</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="230" class="code-line" dir="auto">
+<td>The Crown / Huang Guan</td>
+<td>670</td>
+<td>36.10666667</td>
+<td>76.20583333</td>
+<td>7295</td>
+<td>7194</td>
+<td>0.716290902</td>
+<td>0.74075236</td>
+<td>0.665955525</td>
+<td>0.6573046</td>
+<td>0.609224609</td>
+<td>0.472866508</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="231" class="code-line" dir="auto">
+<td>Gyala Peri</td>
+<td>889</td>
+<td>29.81444444</td>
+<td>94.96861111</td>
+<td>7294</td>
+<td>7229</td>
+<td>0.576328447</td>
+<td>0.628629971</td>
+<td>0.636509765</td>
+<td>0.639723702</td>
+<td>0.588006962</td>
+<td>0.588211497</td>
+<td>0.562710685</td>
+<td>0.514565534</td>
+<td>0.433789187</td>
+<td>0.412303846</td>
+<td>0.386335677</td>
+<td>0.350403637</td>
+<td>0.313188714</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="232" class="code-line" dir="auto">
+<td>Porong Ri</td>
+<td>209</td>
+<td>28.38944444</td>
+<td>85.72</td>
+<td>7292</td>
+<td>7294</td>
+<td>0.541291564</td>
+<td>0.195603247</td>
+<td>0.224075892</td>
+<td>0.232426982</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="233" class="code-line" dir="auto">
+<td>Baintha Brakk / The Ogre</td>
+<td>935</td>
+<td>35.9475</td>
+<td>75.75333333</td>
+<td>7285</td>
+<td>7181</td>
+<td>0.698927091</td>
+<td>0.758585365</td>
+<td>0.775820194</td>
+<td>0.750709692</td>
+<td>0.753368045</td>
+<td>0.719322648</td>
+<td>0.532435949</td>
+<td>0.437949088</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="234" class="code-line" dir="auto">
+<td>Yutmaru Sar</td>
+<td>432</td>
+<td>36.22638889</td>
+<td>75.36722222</td>
+<td>7283</td>
+<td>7267</td>
+<td>0.617451702</td>
+<td>0.593017665</td>
+<td>0.476437233</td>
+<td>0.479544416</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="235" class="code-line" dir="auto">
+<td>Baltistan Peak / K6</td>
+<td>679</td>
+<td>35.41833333</td>
+<td>76.55166667</td>
+<td>7282</td>
+<td>7168</td>
+<td>0.57792374</td>
+<td>0.598598065</td>
+<td>0.624970199</td>
+<td>0.642826282</td>
+<td>0.476880258</td>
+<td>0.475582018</td>
+<td>0.452513509</td>
+<td>0.369587002</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="236" class="code-line" dir="auto">
+<td>Kangpenqing / Gang Benchhen</td>
+<td>499</td>
+<td>28.55083333</td>
+<td>85.54555556</td>
+<td>7281</td>
+<td>7274</td>
+<td>0.431581227</td>
+<td>0.484004594</td>
+<td>0.494468485</td>
+<td>0.50573032</td>
+<td>0.413398694</td>
+<td>0.383741406</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="237" class="code-line" dir="auto">
+<td>Muztagh Tower</td>
+<td>759</td>
+<td>35.82777778</td>
+<td>76.36111111</td>
+<td>7276</td>
+<td>7017</td>
+<td>0.817649045</td>
+<td>0.740085212</td>
+<td>0.711761268</td>
+<td>0.692298369</td>
+<td>0.648585791</td>
+<td>0.584007427</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="238" class="code-line" dir="auto">
+<td>Mana Peak</td>
+<td>287</td>
+<td>30.88055556</td>
+<td>79.61527778</td>
+<td>7272</td>
+<td>7186</td>
+<td>0.62183904</td>
+<td>0.437108793</td>
+<td>0.409326282</td>
+<td>0.237844641</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="239" class="code-line" dir="auto">
+<td>Diran</td>
+<td>709</td>
+<td>36.12027778</td>
+<td>74.66166667</td>
+<td>7266</td>
+<td>7258</td>
+<td>0.625461227</td>
+<td>0.599922316</td>
+<td>0.600012882</td>
+<td>0.575433055</td>
+<td>0.55853086</td>
+<td>0.545496875</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="240" class="code-line" dir="auto">
+<td>Labuche Kang III / East</td>
+<td>241</td>
+<td>28.30138889</td>
+<td>86.38388889</td>
+<td>7250</td>
+<td>7251</td>
+<td>0.604394898</td>
+<td>0.416625857</td>
+<td>0.290433179</td>
+<td>0.267852132</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="241" class="code-line" dir="auto">
+<td>Putha Hiunchuli</td>
+<td>535</td>
+<td>28.74777778</td>
+<td>83.14611111</td>
+<td>7246</td>
+<td>7236</td>
+<td>0.552899694</td>
+<td>0.560220706</td>
+<td>0.5669743</td>
+<td>0.519271235</td>
+<td>0.486585284</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="242" class="code-line" dir="auto">
+<td>Apsarasas Kangri</td>
+<td>175</td>
+<td>35.53861111</td>
+<td>77.14861111</td>
+<td>7245</td>
+<td>7166</td>
+<td>0.349857306</td>
+<td>0.307867181</td>
+<td>0.218652697</td>
+<td>0.194489548</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="243" class="code-line" dir="auto">
+<td>Mukut Parbat</td>
+<td>417</td>
+<td>30.94916667</td>
+<td>79.57</td>
+<td>7242</td>
+<td>7131</td>
+<td>0.553123793</td>
+<td>0.576572002</td>
+<td>0.595668176</td>
+<td>0.219865238</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="244" class="code-line" dir="auto">
+<td>Rimo III</td>
+<td>F</td>
+<td>35.37527778</td>
+<td>77.36166667</td>
+<td>7233</td>
+<td>7174</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="245" class="code-line" dir="auto">
+<td>Langtang Lirung</td>
+<td>677</td>
+<td>28.25611111</td>
+<td>85.51694444</td>
+<td>7227</td>
+<td>7207</td>
+<td>0.535512868</td>
+<td>0.535497063</td>
+<td>0.547897953</td>
+<td>0.544449621</td>
+<td>0.525088329</td>
+<td>0.520388864</td>
+<td>0.441849742</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="246" class="code-line" dir="auto">
+<td>Karjiang</td>
+<td>362</td>
+<td>28.2575</td>
+<td>90.64694444</td>
+<td>7221</td>
+<td>7077</td>
+<td>0.568892488</td>
+<td>0.536040367</td>
+<td>0.509988688</td>
+<td>0.33532901</td>
+<td>0.329261184</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="247" class="code-line" dir="auto">
+<td>Annapurna Dakshin</td>
+<td>352</td>
+<td>28.51833333</td>
+<td>83.80611111</td>
+<td>7219</td>
+<td>7119</td>
+<td>0.42927356</td>
+<td>0.477714094</td>
+<td>0.502398581</td>
+<td>0.185312521</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="248" class="code-line" dir="auto">
+<td>Khartaphu</td>
+<td>232</td>
+<td>28.06361111</td>
+<td>86.9775</td>
+<td>7213</td>
+<td>7215</td>
+<td>0.580856627</td>
+<td>0.445516605</td>
+<td>0.33191649</td>
+<td>0.138480172</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="249" class="code-line" dir="auto">
+<td>Tongshanjiabu</td>
+<td>446</td>
+<td>28.18666667</td>
+<td>89.9575</td>
+<td>7207</td>
+<td>7205</td>
+<td>0.586834711</td>
+<td>0.603254589</td>
+<td>0.442364259</td>
+<td>0.430926924</td>
+<td>0.405545018</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="250" class="code-line" dir="auto">
+<td>Malangutti Sar</td>
+<td>230</td>
+<td>36.36305556</td>
+<td>75.14916667</td>
+<td>7207</td>
+<td>7163</td>
+<td>0.432730567</td>
+<td>0.459508356</td>
+<td>0.205761036</td>
+<td>0.195791153</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="251" class="code-line" dir="auto">
+<td>Noijin Kangsang / Norin Kang</td>
+<td>475</td>
+<td>28.94666667</td>
+<td>90.17833333</td>
+<td>7206</td>
+<td>7196</td>
+<td>0.457680563</td>
+<td>0.423534436</td>
+<td>0.423068369</td>
+<td>0.401965021</td>
+<td>0.397713398</td>
+<td>0.365593825</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="252" class="code-line" dir="auto">
+<td>Langtang Ri</td>
+<td>314</td>
+<td>28.38138889</td>
+<td>85.68361111</td>
+<td>7205</td>
+<td>7174</td>
+<td>0.595772569</td>
+<td>0.629408871</td>
+<td>0.194982392</td>
+<td>0.211018643</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="253" class="code-line" dir="auto">
+<td>Kangphu Kang</td>
+<td>423</td>
+<td>28.15666667</td>
+<td>90.07083333</td>
+<td>7204</td>
+<td>7181</td>
+<td>0.446617644</td>
+<td>0.476047368</td>
+<td>0.462636304</td>
+<td>0.434154139</td>
+<td>0.384602881</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="254" class="code-line" dir="auto">
+<td>Singhi Kangri</td>
+<td>443</td>
+<td>35.59972222</td>
+<td>76.98361111</td>
+<td>7202</td>
+<td>7139</td>
+<td>0.671278303</td>
+<td>0.696313595</td>
+<td>0.633137029</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="255" class="code-line" dir="auto">
+<td>Lupghar Sar</td>
+<td>367</td>
+<td>36.35027778</td>
+<td>75.03694444</td>
+<td>7200</td>
+<td>7185</td>
+<td>0.45930892</td>
+<td>0.513187316</td>
+<td>0.524081219</td>
+<td>0.19964246</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="256" class="code-line" dir="auto">
+<td>Aconcagua</td>
+<td>871</td>
+<td>-32.65306</td>
+<td>-70.01167</td>
+<td>6960.8</td>
+<td>6936</td>
+<td>0.492269799</td>
+<td>0.530750914</td>
+<td>0.551471351</td>
+<td>0.553501999</td>
+<td>0.555975011</td>
+<td>0.554969115</td>
+<td>0.546462442</td>
+<td>0.50233317</td>
+<td>0.458599171</td>
+<td>0.355150508</td>
+<td>0.311162711</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="257" class="code-line" dir="auto">
+<td>Ojos del Salado</td>
+<td>181</td>
+<td>-27.10944</td>
+<td>-68.54222</td>
+<td>6893</td>
+<td>6870</td>
+<td>0.33611499</td>
+<td>0.265175079</td>
+<td>0.258895622</td>
+<td>0.188057574</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="258" class="code-line" dir="auto">
+<td>Kuh-e Bandaka</td>
+<td>579</td>
+<td>36.17917</td>
+<td>70.98333</td>
+<td>6812</td>
+<td>6828</td>
+<td>0.552295894</td>
+<td>0.58056915</td>
+<td>0.602163192</td>
+<td>0.617111565</td>
+<td>0.526087529</td>
+<td>0.43135488</td>
+<td>0.380497048</td>
+<td>0.338849621</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="259" class="code-line" dir="auto">
+<td>Chakragil</td>
+<td>412</td>
+<td>38.86583</td>
+<td>75.10833</td>
+<td>6760</td>
+<td>6684</td>
+<td>0.543027816</td>
+<td>0.554893957</td>
+<td>0.478419939</td>
+<td>0.390584083</td>
+<td>0.328161052</td>
+<td>0.317222848</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="260" class="code-line" dir="auto">
+<td>Mercedario</td>
+<td>631</td>
+<td>-31.97889</td>
+<td>-70.11278</td>
+<td>6720</td>
+<td>6699</td>
+<td>0.387425838</td>
+<td>0.387611325</td>
+<td>0.384928389</td>
+<td>0.399470541</td>
+<td>0.416850802</td>
+<td>0.429764687</td>
+<td>0.420753486</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="261" class="code-line" dir="auto">
+<td>Xuelian Feng</td>
+<td>703</td>
+<td>42.26167</td>
+<td>80.89</td>
+<td>6627</td>
+<td>6598</td>
+<td>0.68937248</td>
+<td>0.47438473</td>
+<td>0.401722859</td>
+<td>0.384354513</td>
+<td>0.382818545</td>
+<td>0.384499066</td>
+<td>0.364965251</td>
+<td>0.366769671</td>
+<td>0.370193602</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="262" class="code-line" dir="auto">
+<td>Buni Zom</td>
+<td>414</td>
+<td>36.15417</td>
+<td>72.3275</td>
+<td>6542</td>
+<td>6466</td>
+<td>0.694980296</td>
+<td>0.590408032</td>
+<td>0.590839015</td>
+<td>0.330635258</td>
+<td>0.309611539</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="263" class="code-line" dir="auto">
+<td>Chimborazo</td>
+<td>617</td>
+<td>-1.46917</td>
+<td>-78.8175</td>
+<td>6263</td>
+<td>6256</td>
+<td>0.3733893</td>
+<td>0.415804125</td>
+<td>0.441075647</td>
+<td>0.456558648</td>
+<td>0.446291116</td>
+<td>0.425250296</td>
+<td>0.39917622</td>
+<td>0.362863279</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="264" class="code-line" dir="auto">
+<td>Denali / Mount McKinley</td>
+<td>1546</td>
+<td>63.0691028</td>
+<td>-151.0062611</td>
+<td>6190</td>
+<td>6173</td>
+<td>0.539563436</td>
+<td>0.579584865</td>
+<td>0.502484543</td>
+<td>0.522182879</td>
+<td>0.531909761</td>
+<td>0.542039565</td>
+<td>0.541549062</td>
+<td>0.54022421</td>
+<td>0.541885514</td>
+<td>0.543463545</td>
+<td>0.550775904</td>
+<td>0.554396209</td>
+<td>0.544743222</td>
+<td>0.533237429</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="265" class="code-line" dir="auto">
+<td>Mount Logan</td>
+<td>641</td>
+<td>60.56722</td>
+<td>-140.40528</td>
+<td>5959</td>
+<td>5938</td>
+<td>0.372978073</td>
+<td>0.354902307</td>
+<td>0.305073822</td>
+<td>0.307454052</td>
+<td>0.316278257</td>
+<td>0.335007401</td>
+<td>0.35506412</td>
+<td>0.377075321</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="266" class="code-line" dir="auto">
+<td>Mount Kilimanjaro</td>
+<td>422</td>
+<td>-3.06667</td>
+<td>37.35917</td>
+<td>5895</td>
+<td>5883</td>
+<td>0.180424745</td>
+<td>0.245028433</td>
+<td>0.288859681</td>
+<td>0.318819125</td>
+<td>0.332506217</td>
+<td>0.324907928</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="267" class="code-line" dir="auto">
+<td>Pico Simn Bolvar</td>
+<td>199</td>
+<td>10.83833</td>
+<td>-73.68667</td>
+<td>5720</td>
+<td>5687</td>
+<td>0.418385237</td>
+<td>0.32437983</td>
+<td>0.284973812</td>
+<td>0.209342861</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="268" class="code-line" dir="auto">
+<td>Mount Elbrus</td>
+<td>766</td>
+<td>43.35254</td>
+<td>42.437875</td>
+<td>5642</td>
+<td>5651</td>
+<td>0.348355398</td>
+<td>0.39745994</td>
+<td>0.408507732</td>
+<td>0.41981572</td>
+<td>0.425326886</td>
+<td>0.430196839</td>
+<td>0.433285467</td>
+<td>0.426094102</td>
+<td>0.403083894</td>
+<td>0.361629071</td>
+<td>0.310072488</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="269" class="code-line" dir="auto">
+<td>Pico de Orizaba</td>
+<td>574</td>
+<td>19.03</td>
+<td>-97.27</td>
+<td>5636</td>
+<td>5595</td>
+<td>0.456366915</td>
+<td>0.484168728</td>
+<td>0.48930801</td>
+<td>0.4723515</td>
+<td>0.452609336</td>
+<td>0.429112817</td>
+<td>0.382453988</td>
+<td>0.325460761</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="270" class="code-line" dir="auto">
+<td>Mount Damavand</td>
+<td>893</td>
+<td>35.95528</td>
+<td>52.10917</td>
+<td>5610</td>
+<td>5608</td>
+<td>0.506181069</td>
+<td>0.528471437</td>
+<td>0.538334535</td>
+<td>0.541301332</td>
+<td>0.537268158</td>
+<td>0.52702704</td>
+<td>0.510702568</td>
+<td>0.492409907</td>
+<td>0.47012252</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="271" class="code-line" dir="auto">
+<td>Jade Dragon Snow Mountain</td>
+<td>253</td>
+<td>27.09833</td>
+<td>100.175</td>
+<td>5596</td>
+<td>5518</td>
+<td>0.514110928</td>
+<td>0.481340087</td>
+<td>0.319651617</td>
+<td>0.280991232</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="272" class="code-line" dir="auto">
+<td>Cerro del Bolsn</td>
+<td>129</td>
+<td>-27.21417</td>
+<td>-66.09417</td>
+<td>5552</td>
+<td>5539</td>
+<td>0.429370585</td>
+<td>0.242211456</td>
+<td>0.151745866</td>
+<td>0.130035089</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="273" class="code-line" dir="auto">
+<td>Mount Saint Elias</td>
+<td>1306</td>
+<td>60.29222</td>
+<td>-140.93139</td>
+<td>5489</td>
+<td>5479</td>
+<td>0.671742043</td>
+<td>0.539948392</td>
+<td>0.57513152</td>
+<td>0.60165803</td>
+<td>0.61574012</td>
+<td>0.619851074</td>
+<td>0.621892552</td>
+<td>0.618169246</td>
+<td>0.595848893</td>
+<td>0.567326133</td>
+<td>0.55432971</td>
+<td>0.522502046</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="274" class="code-line" dir="auto">
+<td>Bogda Peak</td>
+<td>353</td>
+<td>43.80167</td>
+<td>88.335</td>
+<td>5445</td>
+<td>5215</td>
+<td>0.528082125</td>
+<td>0.546443207</td>
+<td>0.442262829</td>
+<td>0.386378736</td>
+<td>0.321207547</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="275" class="code-line" dir="auto">
+<td>Ritacuba Blanco</td>
+<td>134</td>
+<td>6.49417</td>
+<td>-72.2975</td>
+<td>5410</td>
+<td>5341</td>
+<td>0.336732338</td>
+<td>0.228381127</td>
+<td>0.175734458</td>
+<td>0.148388534</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="276" class="code-line" dir="auto">
+<td>Popocatepetl</td>
+<td>591</td>
+<td>19.0222194</td>
+<td>-98.6277806</td>
+<td>5400</td>
+<td>5414</td>
+<td>0.428874769</td>
+<td>0.463263572</td>
+<td>0.47628877</td>
+<td>0.474417314</td>
+<td>0.461068851</td>
+<td>0.431746185</td>
+<td>0.38896295</td>
+<td>0.34775398</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="277" class="code-line" dir="auto">
+<td>Mount Lucania</td>
+<td>468</td>
+<td>61.02333</td>
+<td>-140.46556</td>
+<td>5226</td>
+<td>5234</td>
+<td>0.483409197</td>
+<td>0.445561743</td>
+<td>0.450801917</td>
+<td>0.459722556</td>
+<td>0.368520169</td>
+<td>0.359791264</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="278" class="code-line" dir="auto">
+<td>Mount Kenya</td>
+<td>F</td>
+<td>-0.1</td>
+<td>37.2</td>
+<td>5199</td>
+<td>3053</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="279" class="code-line" dir="auto">
+<td>Mount Ararat</td>
+<td>901</td>
+<td>39.70194</td>
+<td>44.29833</td>
+<td>5137</td>
+<td>5137</td>
+<td>0.412866928</td>
+<td>0.434861229</td>
+<td>0.464025131</td>
+<td>0.476291225</td>
+<td>0.482084533</td>
+<td>0.48164074</td>
+<td>0.467105894</td>
+<td>0.436738332</td>
+<td>0.403123758</td>
+<td>0.379351298</td>
+<td>0.358770511</td>
+<td>0.329110457</td>
+<td>0.318819675</td>
+<td>0.310694125</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="280" class="code-line" dir="auto">
+<td>Mount Stanley</td>
+<td>236</td>
+<td>0.38583</td>
+<td>29.87167</td>
+<td>5109</td>
+<td>5023</td>
+<td>0.416685118</td>
+<td>0.399239257</td>
+<td>0.336934276</td>
+<td>0.181433761</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="281" class="code-line" dir="auto">
+<td>Mount Blackburn</td>
+<td>636</td>
+<td>61.73167</td>
+<td>-143.43306</td>
+<td>4996</td>
+<td>5016</td>
+<td>0.376064145</td>
+<td>0.419649186</td>
+<td>0.442935537</td>
+<td>0.464107785</td>
+<td>0.477959918</td>
+<td>0.488911655</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="282" class="code-line" dir="auto">
+<td>Pico Bolvar</td>
+<td>146</td>
+<td>8.540861</td>
+<td>-71.0465</td>
+<td>4981</td>
+<td>4907</td>
+<td>0.256330414</td>
+<td>0.219054384</td>
+<td>0.195234458</td>
+<td>0.162053622</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="283" class="code-line" dir="auto">
+<td>Pik Talgar</td>
+<td>219</td>
+<td>43.1178389</td>
+<td>77.3413333</td>
+<td>4979</td>
+<td>4978</td>
+<td>0.458396997</td>
+<td>0.438777704</td>
+<td>0.260835252</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="284" class="code-line" dir="auto">
+<td>Jiuding Shan</td>
+<td>312</td>
+<td>31.54333</td>
+<td>103.85333</td>
+<td>4969</td>
+<td>4941</td>
+<td>0.357385693</td>
+<td>0.368824595</td>
+<td>0.37327193</td>
+<td>0.347207812</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="285" class="code-line" dir="auto">
+<td>Vinson Massif</td>
+<td>405</td>
+<td>-78.52556</td>
+<td>-85.61722</td>
+<td>4892</td>
+<td>4872</td>
+<td>0.417744903</td>
+<td>0.375973449</td>
+<td>0.402137578</td>
+<td>0.450047228</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="286" class="code-line" dir="auto">
+<td>Tomort</td>
+<td>125</td>
+<td>43.07333</td>
+<td>94.34667</td>
+<td>4886</td>
+<td>4892</td>
+<td>0.323549452</td>
+<td>0.249281189</td>
+<td>0.174311899</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="287" class="code-line" dir="auto">
+<td>Puncak Jaya</td>
+<td>111</td>
+<td>-4.083</td>
+<td>137.183</td>
+<td>4884</td>
+<td>4829</td>
+<td>0.37109381</td>
+<td>0.17162609</td>
+<td>0.119879958</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="288" class="code-line" dir="auto">
+<td>Sabalan</td>
+<td>351</td>
+<td>38.26694</td>
+<td>47.83694</td>
+<td>4811</td>
+<td>4794</td>
+<td>0.430528256</td>
+<td>0.450637171</td>
+<td>0.33675045</td>
+<td>0.32962296</td>
+<td>0.318723871</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="289" class="code-line" dir="auto">
+<td>Monte Bianco/Mont Blanc</td>
+<td>633</td>
+<td>45.83278</td>
+<td>6.865</td>
+<td>4808</td>
+<td>4804</td>
+<td>0.539418902</td>
+<td>0.571604134</td>
+<td>0.533148121</td>
+<td>0.511894098</td>
+<td>0.506388144</td>
+<td>0.486982395</td>
+<td>0.402425954</td>
+<td>0.317962653</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="290" class="code-line" dir="auto">
+<td>Klyuchevskaya Sopka</td>
+<td>1011</td>
+<td>56.067</td>
+<td>160.633</td>
+<td>4750</td>
+<td>4783</td>
+<td>0.529569128</td>
+<td>0.580013145</td>
+<td>0.603984125</td>
+<td>0.618162222</td>
+<td>0.624158053</td>
+<td>0.62573803</td>
+<td>0.619355838</td>
+<td>0.541893236</td>
+<td>0.53262913</td>
+<td>0.38425005</td>
+<td>0.36016288</td>
+<td>0.345945976</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="291" class="code-line" dir="auto">
+<td>Mount Fairweather</td>
+<td>802</td>
+<td>58.90639</td>
+<td>-137.52639</td>
+<td>4671</td>
+<td>4674</td>
+<td>0.653996751</td>
+<td>0.66600062</td>
+<td>0.639016865</td>
+<td>0.631208353</td>
+<td>0.557223257</td>
+<td>0.530177706</td>
+<td>0.493457944</td>
+<td>0.471529366</td>
+<td>0.376820994</td>
+<td>0.365302618</td>
+<td>0.323059336</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="292" class="code-line" dir="auto">
+<td>Mount Meru</td>
+<td>664</td>
+<td>-3.2467806</td>
+<td>36.76025</td>
+<td>4565</td>
+<td>4533</td>
+<td>0.427999533</td>
+<td>0.456227797</td>
+<td>0.445287057</td>
+<td>0.424287421</td>
+<td>0.384880087</td>
+<td>0.374729291</td>
+<td>0.367968709</td>
+<td>0.359782992</td>
+<td>0.341676333</td>
+<td>0.316155019</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="293" class="code-line" dir="auto">
+<td>Ras Dashen</td>
+<td>83</td>
+<td>13.23667</td>
+<td>38.3725</td>
+<td>4550</td>
+<td>4528</td>
+<td>0.135604036</td>
+<td>0.120211289</td>
+<td>0.118617146</td>
+<td>0.086081026</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="294" class="code-line" dir="auto">
+<td>Mount Wilhelm</td>
+<td>F</td>
+<td>-5.8</td>
+<td>145.03333</td>
+<td>4509</td>
+<td>4467</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="295" class="code-line" dir="auto">
+<td>Mount Karisimbi</td>
+<td>286</td>
+<td>-1.5</td>
+<td>29.45</td>
+<td>4507</td>
+<td>4484</td>
+<td>0.449712213</td>
+<td>0.471251912</td>
+<td>0.337896344</td>
+<td>0.318092776</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="296" class="code-line" dir="auto">
+<td>Belukha Mountain</td>
+<td>436</td>
+<td>49.80694</td>
+<td>86.58972</td>
+<td>4506</td>
+<td>4472</td>
+<td>0.633159036</td>
+<td>0.433713824</td>
+<td>0.409217215</td>
+<td>0.427166783</td>
+<td>0.396505606</td>
+<td>0.320768046</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="297" class="code-line" dir="auto">
+<td>Mount Whitney</td>
+<td>136</td>
+<td>36.57861</td>
+<td>-118.29194</td>
+<td>4418</td>
+<td>4401</td>
+<td>0.446789207</td>
+<td>0.272339953</td>
+<td>0.156794856</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="298" class="code-line" dir="auto">
+<td>Mount Rainier</td>
+<td>971</td>
+<td>46.85167</td>
+<td>-121.76028</td>
+<td>4393</td>
+<td>4391</td>
+<td>0.339723883</td>
+<td>0.409739232</td>
+<td>0.455557354</td>
+<td>0.482491229</td>
+<td>0.498344426</td>
+<td>0.504965644</td>
+<td>0.495595073</td>
+<td>0.48096938</td>
+<td>0.460314273</td>
+<td>0.444498549</td>
+<td>0.422038405</td>
+<td>0.375201159</td>
+<td>0.324742041</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="299" class="code-line" dir="auto">
+<td>Mount Shasta</td>
+<td>780</td>
+<td>41.4091972</td>
+<td>-122.1948889</td>
+<td>4317</td>
+<td>4315</td>
+<td>0.476394279</td>
+<td>0.495777726</td>
+<td>0.476171438</td>
+<td>0.473992431</td>
+<td>0.463439652</td>
+<td>0.450683362</td>
+<td>0.434492756</td>
+<td>0.419022354</td>
+<td>0.397011974</td>
+<td>0.370311222</td>
+<td>0.339096689</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="300" class="code-line" dir="auto">
+<td>Volcn Tajumulco</td>
+<td>359</td>
+<td>15.033</td>
+<td>-91.9</td>
+<td>4220</td>
+<td>4226</td>
+<td>0.43814828</td>
+<td>0.452971047</td>
+<td>0.433619288</td>
+<td>0.398636254</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="301" class="code-line" dir="auto">
+<td>Mount Hayes</td>
+<td>890</td>
+<td>63.62083</td>
+<td>-146.715</td>
+<td>4216</td>
+<td>4192</td>
+<td>0.732606286</td>
+<td>0.638712294</td>
+<td>0.673588082</td>
+<td>0.693066812</td>
+<td>0.701331248</td>
+<td>0.684706401</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="302" class="code-line" dir="auto">
+<td>Mauna Kea</td>
+<td>145</td>
+<td>19.82056</td>
+<td>-155.46806</td>
+<td>4205</td>
+<td>4223</td>
+<td>0.166030308</td>
+<td>0.153719388</td>
+<td>0.154263311</td>
+<td>0.161512644</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="303" class="code-line" dir="auto">
+<td>Toubkal</td>
+<td>160</td>
+<td>31.06194</td>
+<td>-7.91611</td>
+<td>4167</td>
+<td>4136</td>
+<td>0.42113392</td>
+<td>0.227613939</td>
+<td>0.18996195</td>
+<td>0.178214321</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="304" class="code-line" dir="auto">
+<td>Mount Boising</td>
+<td>F</td>
+<td>-5.8</td>
+<td>146.1</td>
+<td>4150</td>
+<td>3851</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="305" class="code-line" dir="auto">
+<td>El Melao</td>
+<td>68</td>
+<td>-28.8675</td>
+<td>-67.1275</td>
+<td>4150</td>
+<td>4147</td>
+<td>0.052476849</td>
+<td>0.059433432</td>
+<td>0.068549878</td>
+<td>0.075152409</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="306" class="code-line" dir="auto">
+<td>Mount Kinabalu</td>
+<td>F</td>
+<td>6.075</td>
+<td>116.55861</td>
+<td>4095</td>
+<td>4063</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="307" class="code-line" dir="auto">
+<td>Monte San Valentin</td>
+<td>650</td>
+<td>-46.595</td>
+<td>-73.34583</td>
+<td>4058</td>
+<td>4020</td>
+<td>0.462343655</td>
+<td>0.491764326</td>
+<td>0.53508683</td>
+<td>0.45017504</td>
+<td>0.429097229</td>
+<td>0.391801524</td>
+<td>0.367570157</td>
+<td>0.346296942</td>
+<td>0.330553165</td>
+<td>0.309714179</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="308" class="code-line" dir="auto">
+<td>Mount Cameroon</td>
+<td>229</td>
+<td>4.21667</td>
+<td>9.1725</td>
+<td>4040</td>
+<td>4039</td>
+<td>0.303786789</td>
+<td>0.306584074</td>
+<td>0.285219501</td>
+<td>0.254992091</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="309" class="code-line" dir="auto">
+<td>Mount Waddington</td>
+<td>580</td>
+<td>51.37361</td>
+<td>-125.26333</td>
+<td>4019</td>
+<td>3992</td>
+<td>0.646277812</td>
+<td>0.676771502</td>
+<td>0.684094945</td>
+<td>0.644649732</td>
+<td>0.43826898</td>
+<td>0.357516317</td>
+<td>0.320116106</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="310" class="code-line" dir="auto">
+<td>Mount Marcus Baker</td>
+<td>218</td>
+<td>61.43778</td>
+<td>-147.75111</td>
+<td>3991</td>
+<td>4019</td>
+<td>0.469653627</td>
+<td>0.400528174</td>
+<td>0.311495293</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="311" class="code-line" dir="auto">
+<td>Mount Robson</td>
+<td>718</td>
+<td>53.11056</td>
+<td>-119.15667</td>
+<td>3959</td>
+<td>3943</td>
+<td>0.685911015</td>
+<td>0.700346603</td>
+<td>0.699279603</td>
+<td>0.673325876</td>
+<td>0.617046746</td>
+<td>0.550585031</td>
+<td>0.478965433</td>
+<td>0.350318796</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="312" class="code-line" dir="auto">
+<td>Yushan</td>
+<td>220</td>
+<td>23.47</td>
+<td>120.9572667</td>
+<td>3952</td>
+<td>3883</td>
+<td>0.226456939</td>
+<td>0.228114742</td>
+<td>0.235301137</td>
+<td>0.244864731</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="313" class="code-line" dir="auto">
+<td>Taftan</td>
+<td>271</td>
+<td>28.6</td>
+<td>61.133</td>
+<td>3941</td>
+<td>3928</td>
+<td>0.314266913</td>
+<td>0.336547771</td>
+<td>0.338203277</td>
+<td>0.301234129</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="314" class="code-line" dir="auto">
+<td>Sauyr Zhotasy</td>
+<td>64</td>
+<td>47.04917</td>
+<td>85.56667</td>
+<td>3840</td>
+<td>3827</td>
+<td>0.214877829</td>
+<td>0.110873111</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="315" class="code-line" dir="auto">
+<td>Saramati</td>
+<td>258</td>
+<td>25.733</td>
+<td>95.033</td>
+<td>3826</td>
+<td>3832</td>
+<td>0.362845857</td>
+<td>0.36839935</td>
+<td>0.340286017</td>
+<td>0.286812383</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="316" class="code-line" dir="auto">
+<td>Cerro Chirrip</td>
+<td>105</td>
+<td>9.48417</td>
+<td>-83.48861</td>
+<td>3820</td>
+<td>3793</td>
+<td>0.099172627</td>
+<td>0.115527406</td>
+<td>0.125539521</td>
+<td>0.116407829</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="317" class="code-line" dir="auto">
+<td>Mount Kerinci</td>
+<td>587</td>
+<td>-1.69694389</td>
+<td>101.2644439</td>
+<td>3805</td>
+<td>3769</td>
+<td>0.390500613</td>
+<td>0.419260901</td>
+<td>0.422573139</td>
+<td>0.422208496</td>
+<td>0.419769073</td>
+<td>0.4091837</td>
+<td>0.39127556</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="318" class="code-line" dir="auto">
+<td>Mount Erebus</td>
+<td>E</td>
+<td>-77.533</td>
+<td>167.283</td>
+<td>3794</td>
+<td>3198</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="319" class="code-line" dir="auto">
+<td>Mount Fuji</td>
+<td>841</td>
+<td>35.36056</td>
+<td>138.7275</td>
+<td>3776</td>
+<td>3757</td>
+<td>0.370500591</td>
+<td>0.427439246</td>
+<td>0.454624973</td>
+<td>0.468393383</td>
+<td>0.471556671</td>
+<td>0.466326002</td>
+<td>0.456429991</td>
+<td>0.442160932</td>
+<td>0.425426525</td>
+<td>0.399397219</td>
+<td>0.365813706</td>
+<td>0.32336993</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="320" class="code-line" dir="auto">
+<td>Mount Rinjani</td>
+<td>455</td>
+<td>-8.41667</td>
+<td>116.46667</td>
+<td>3726</td>
+<td>3692</td>
+<td>0.439256302</td>
+<td>0.437104138</td>
+<td>0.440191414</td>
+<td>0.437394117</td>
+<td>0.41350752</td>
+<td>0.326816986</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="321" class="code-line" dir="auto">
+<td>Aoraki/Mount Cook</td>
+<td>450</td>
+<td>-43.595</td>
+<td>170.14194</td>
+<td>3724</td>
+<td>3682</td>
+<td>0.546344917</td>
+<td>0.569759109</td>
+<td>0.579564659</td>
+<td>0.481469828</td>
+<td>0.408905956</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="322" class="code-line" dir="auto">
+<td>Teide</td>
+<td>493</td>
+<td>28.272639</td>
+<td>-16.643611</td>
+<td>3715</td>
+<td>3699</td>
+<td>0.421668138</td>
+<td>0.408112486</td>
+<td>0.388097228</td>
+<td>0.390312273</td>
+<td>0.388969207</td>
+<td>0.379242524</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="323" class="code-line" dir="auto">
+<td>Monte San Lorenzo</td>
+<td>674</td>
+<td>-47.59167</td>
+<td>-72.30667</td>
+<td>3706</td>
+<td>3623</td>
+<td>0.478799948</td>
+<td>0.462185576</td>
+<td>0.382029565</td>
+<td>0.410670205</td>
+<td>0.432661616</td>
+<td>0.441304304</td>
+<td>0.433873203</td>
+<td>0.374179602</td>
+<td>0.340027932</td>
+<td>0.320953007</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="324" class="code-line" dir="auto">
+<td>Gunnbjrn Fjeld</td>
+<td>245</td>
+<td>68.9195</td>
+<td>-29.8985333</td>
+<td>3694</td>
+<td>3688</td>
+<td>0.579552937</td>
+<td>0.300359782</td>
+<td>0.260643487</td>
+<td>0.271697375</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="325" class="code-line" dir="auto">
+<td>Semeru</td>
+<td>413</td>
+<td>-8.1</td>
+<td>112.91667</td>
+<td>3676</td>
+<td>3667</td>
+<td>0.382511638</td>
+<td>0.434376995</td>
+<td>0.455078932</td>
+<td>0.458649008</td>
+<td>0.352483189</td>
+<td>0.307517638</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="326" class="code-line" dir="auto">
+<td>Mount Suckling</td>
+<td>154</td>
+<td>-9.66917</td>
+<td>149.01083</td>
+<td>3676</td>
+<td>3648</td>
+<td>0.405203909</td>
+<td>0.270252672</td>
+<td>0.176812291</td>
+<td>0.171427542</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="327" class="code-line" dir="auto">
+<td>Jabal An-Nabi Shu'ayb</td>
+<td>109</td>
+<td>15.27917</td>
+<td>43.97583</td>
+<td>3666</td>
+<td>3661</td>
+<td>0.177168133</td>
+<td>0.170583325</td>
+<td>0.155224806</td>
+<td>0.105484041</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="328" class="code-line" dir="auto">
+<td>Lautaro</td>
+<td>579</td>
+<td>-49.019</td>
+<td>-73.504</td>
+<td>3623</td>
+<td>3582</td>
+<td>0.40938122</td>
+<td>0.4552858</td>
+<td>0.400321828</td>
+<td>0.400044982</td>
+<td>0.401628035</td>
+<td>0.380035912</td>
+<td>0.360964001</td>
+<td>0.340750582</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="329" class="code-line" dir="auto">
+<td>Ichinsky</td>
+<td>767</td>
+<td>55.67778</td>
+<td>157.72167</td>
+<td>3607</td>
+<td>3621</td>
+<td>0.461321123</td>
+<td>0.50816689</td>
+<td>0.525106571</td>
+<td>0.485047036</td>
+<td>0.473262875</td>
+<td>0.465782661</td>
+<td>0.44378551</td>
+<td>0.417725459</td>
+<td>0.390066312</td>
+<td>0.365436254</td>
+<td>0.327295013</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="330" class="code-line" dir="auto">
+<td>Monarch Mountain</td>
+<td>398</td>
+<td>51.89944</td>
+<td>-125.87583</td>
+<td>3555</td>
+<td>3432</td>
+<td>0.708645861</td>
+<td>0.712552991</td>
+<td>0.527833031</td>
+<td>0.442248672</td>
+<td>0.341217376</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="331" class="code-line" dir="auto">
+<td>Mulhacn</td>
+<td>126</td>
+<td>37.05333</td>
+<td>-3.31139</td>
+<td>3479</td>
+<td>3462</td>
+<td>0.303470503</td>
+<td>0.204330863</td>
+<td>0.148178367</td>
+<td>0.139815397</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="332" class="code-line" dir="auto">
+<td>Mount Latimojong</td>
+<td>137</td>
+<td>-3.385</td>
+<td>120.02417</td>
+<td>3478</td>
+<td>3436</td>
+<td>0.22935592</td>
+<td>0.226899015</td>
+<td>0.166453148</td>
+<td>0.151963544</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="333" class="code-line" dir="auto">
+<td>Mount Leuser</td>
+<td>104</td>
+<td>3.7975</td>
+<td>97.21917</td>
+<td>3466</td>
+<td>3453</td>
+<td>0.207018171</td>
+<td>0.135831198</td>
+<td>0.119444314</td>
+<td>0.115398631</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="334" class="code-line" dir="auto">
+<td>Koryaksky</td>
+<td>E</td>
+<td>53.317</td>
+<td>158.683</td>
+<td>3456</td>
+<td>3267</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="335" class="code-line" dir="auto">
+<td>Emi Koussi</td>
+<td>52</td>
+<td>19.78944</td>
+<td>18.55111</td>
+<td>3445</td>
+<td>3439</td>
+<td>0.096965817</td>
+<td>0.067099807</td>
+<td>0.074730609</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="336" class="code-line" dir="auto">
+<td>Mount Slamet</td>
+<td>465</td>
+<td>-7.239</td>
+<td>109.22</td>
+<td>3432</td>
+<td>3411</td>
+<td>0.335551773</td>
+<td>0.380640989</td>
+<td>0.383737886</td>
+<td>0.377135354</td>
+<td>0.366910667</td>
+<td>0.346202259</td>
+<td>0.30979968</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="337" class="code-line" dir="auto">
+<td>Aneto</td>
+<td>195</td>
+<td>42.6309917</td>
+<td>0.6566861</td>
+<td>3404</td>
+<td>3355</td>
+<td>0.320042284</td>
+<td>0.299508526</td>
+<td>0.24349896</td>
+<td>0.216858861</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="338" class="code-line" dir="auto">
+<td>Mount Etna</td>
+<td>399</td>
+<td>37.75083451</td>
+<td>14.99322029</td>
+<td>3403</td>
+<td>3311</td>
+<td>0.301545693</td>
+<td>0.305996138</td>
+<td>0.310396674</td>
+<td>0.314249108</td>
+<td>0.313865741</td>
+<td>0.306724349</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="339" class="code-line" dir="auto">
+<td>Arjuno-Welirang</td>
+<td>266</td>
+<td>-7.765</td>
+<td>112.58972</td>
+<td>3339</td>
+<td>3329</td>
+<td>0.402193798</td>
+<td>0.310536577</td>
+<td>0.302581149</td>
+<td>0.295398724</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="340" class="code-line" dir="auto">
+<td>Raung</td>
+<td>251</td>
+<td>-8.125</td>
+<td>114.04167</td>
+<td>3332</td>
+<td>3297</td>
+<td>0.25969427</td>
+<td>0.268835723</td>
+<td>0.276629501</td>
+<td>0.278792232</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="341" class="code-line" dir="auto">
+<td>Shiveluch</td>
+<td>877</td>
+<td>56.6536333</td>
+<td>161.3629667</td>
+<td>3307</td>
+<td>3270</td>
+<td>0.471231077</td>
+<td>0.525115058</td>
+<td>0.550640447</td>
+<td>0.514337024</td>
+<td>0.5046937</td>
+<td>0.501883793</td>
+<td>0.490877263</td>
+<td>0.469061957</td>
+<td>0.450091973</td>
+<td>0.417598035</td>
+<td>0.372317413</td>
+<td>0.32735997</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="342" class="code-line" dir="auto">
+<td>Mount Lawu</td>
+<td>455</td>
+<td>-7.625</td>
+<td>111.19167</td>
+<td>3265</td>
+<td>3257</td>
+<td>0.274177013</td>
+<td>0.297787241</td>
+<td>0.323311145</td>
+<td>0.338209387</td>
+<td>0.34116757</td>
+<td>0.338549819</td>
+<td>0.303012303</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="343" class="code-line" dir="auto">
+<td>Mount Siple</td>
+<td>F</td>
+<td>-73.433</td>
+<td>-126.667</td>
+<td>3110</td>
+<td>3094</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="344" class="code-line" dir="auto">
+<td>Pico Duarte</td>
+<td>131</td>
+<td>19.03306</td>
+<td>-71.00528</td>
+<td>3098</td>
+<td>3103</td>
+<td>0.251344098</td>
+<td>0.261316269</td>
+<td>0.186794515</td>
+<td>0.132594941</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="345" class="code-line" dir="auto">
+<td>Piton des Neiges</td>
+<td>373</td>
+<td>-21.09889</td>
+<td>55.47889</td>
+<td>3069</td>
+<td>3066</td>
+<td>0.31157421</td>
+<td>0.365206402</td>
+<td>0.39150006</td>
+<td>0.363785472</td>
+<td>0.339192362</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="346" class="code-line" dir="auto">
+<td>Haleakal</td>
+<td>153</td>
+<td>20.71806</td>
+<td>-156.25</td>
+<td>3055</td>
+<td>3069</td>
+<td>0.183847697</td>
+<td>0.188810571</td>
+<td>0.192983802</td>
+<td>0.170180365</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="347" class="code-line" dir="auto">
+<td>Mount Agung</td>
+<td>655</td>
+<td>-8.34194</td>
+<td>115.50778</td>
+<td>3031</td>
+<td>3028</td>
+<td>0.337069946</td>
+<td>0.360175367</td>
+<td>0.386746905</td>
+<td>0.401778545</td>
+<td>0.40806213</td>
+<td>0.406666408</td>
+<td>0.399393445</td>
+<td>0.385100923</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="348" class="code-line" dir="auto">
+<td>Mount Binaiya</td>
+<td>209</td>
+<td>-3.17333</td>
+<td>129.455</td>
+<td>3027</td>
+<td>3033</td>
+<td>0.266326389</td>
+<td>0.276274874</td>
+<td>0.248368178</td>
+<td>0.231899227</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="349" class="code-line" dir="auto">
+<td>Jabal Shams</td>
+<td>162</td>
+<td>23.23738819</td>
+<td>57.26379369</td>
+<td>3019</td>
+<td>2991</td>
+<td>0.197170212</td>
+<td>0.21646909</td>
+<td>0.23156559</td>
+<td>0.14585425</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="350" class="code-line" dir="auto">
+<td>Pico Basil</td>
+<td>223</td>
+<td>3.58333</td>
+<td>8.76667</td>
+<td>3011</td>
+<td>2983</td>
+<td>0.301210472</td>
+<td>0.265216717</td>
+<td>0.25974338</td>
+<td>0.2478708</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="351" class="code-line" dir="auto">
+<td>Pico da Neblina</td>
+<td>E</td>
+<td>0.8054944</td>
+<td>-66.0053583</td>
+<td>2994</td>
+<td>2774</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="352" class="code-line" dir="auto">
+<td>Mount Stephenson</td>
+<td>223</td>
+<td>-69.817</td>
+<td>-69.717</td>
+<td>2987</td>
+<td>2928</td>
+<td>0.485518618</td>
+<td>0.296334451</td>
+<td>0.319258036</td>
+<td>0.232796358</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="353" class="code-line" dir="auto">
+<td>Pico do Ramelau</td>
+<td>164</td>
+<td>-8.90667</td>
+<td>125.49333</td>
+<td>2963</td>
+<td>2930</td>
+<td>0.279397467</td>
+<td>0.257482006</td>
+<td>0.234773901</td>
+<td>0.167110671</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="354" class="code-line" dir="auto">
+<td>Mount Apo</td>
+<td>206</td>
+<td>6.9875</td>
+<td>125.27083</td>
+<td>2954</td>
+<td>2928</td>
+<td>0.410167113</td>
+<td>0.412524637</td>
+<td>0.268895759</td>
+<td>0.200926497</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="355" class="code-line" dir="auto">
+<td>Mount Paget</td>
+<td>573</td>
+<td>-54.44083</td>
+<td>-36.55528</td>
+<td>2934</td>
+<td>2907</td>
+<td>0.367890297</td>
+<td>0.425950463</td>
+<td>0.45837116</td>
+<td>0.467180734</td>
+<td>0.464194412</td>
+<td>0.440504634</td>
+<td>0.355995411</td>
+<td>0.311508857</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="356" class="code-line" dir="auto">
+<td>Mount Pulag</td>
+<td>116</td>
+<td>16.58361</td>
+<td>120.88361</td>
+<td>2922</td>
+<td>2928</td>
+<td>0.228768879</td>
+<td>0.229801986</td>
+<td>0.16628591</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="357" class="code-line" dir="auto">
+<td>Maromokotro</td>
+<td>79</td>
+<td>-14.02278</td>
+<td>48.96583</td>
+<td>2876</td>
+<td>2874</td>
+<td>0.114120305</td>
+<td>0.117420556</td>
+<td>0.111973689</td>
+<td>0.087790635</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="358" class="code-line" dir="auto">
+<td>Moncong Lompotabang</td>
+<td>180</td>
+<td>-5.346679069</td>
+<td>119.9316665</td>
+<td>2874</td>
+<td>2874</td>
+<td>0.275850749</td>
+<td>0.231001519</td>
+<td>0.210757316</td>
+<td>0.199617562</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="359" class="code-line" dir="auto">
+<td>Mount Shishaldin</td>
+<td>850</td>
+<td>54.75</td>
+<td>-163.967</td>
+<td>2869</td>
+<td>2857</td>
+<td>0.631640626</td>
+<td>0.651314267</td>
+<td>0.645179217</td>
+<td>0.623854928</td>
+<td>0.597072427</td>
+<td>0.572536968</td>
+<td>0.537124362</td>
+<td>0.489592137</td>
+<td>0.447586704</td>
+<td>0.40357886</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-line="360" class="code-line" dir="auto">
+<td>Pico do Fogo</td>
+<td>418</td>
+<td>14.9492694</td>
+<td>-24.3403694</td>
+<td>2829</td>
+<td>2778</td>
+<td>0.438982265</td>
+<td>0.485866719</td>
+<td>0.50117317</td>
+<td>0.4645127</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p data-line="362" class="code-line" dir="auto">Note:</p>
+<ul data-line="363" class="code-line" dir="auto">
+<li data-line="363" class="code-line" dir="auto">E: Error in data (observed height far from truth height)</li>
+<li data-line="364" class="code-line" dir="auto">F: Too flat / too close to its parent peak to be considered</li>
+</ul>
+<h2 data-line="366" class="code-line" dir="auto" id="reference" tabindex="-1">Reference</h2>
+<p data-line="367" class="code-line" dir="auto">Beyond Elevation: New Metrics to Quantify the Relief of Mountains and Surfaces of Any Terrestrial Body
+(Kai Xu, Yale University)</p>
+
+        <script>var Be=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var Oe=Be((Ct,Pe)=>{var Ce="Expected a function",Ne=NaN,tt="[object Symbol]",nt=/^\s+|\s+$/g,rt=/^[-+]0x[0-9a-f]+$/i,it=/^0b[01]+$/i,at=/^0o[0-7]+$/i,ot=parseInt,st=typeof global=="object"&&global&&global.Object===Object&&global,lt=typeof self=="object"&&self&&self.Object===Object&&self,ct=st||lt||Function("return this")(),dt=Object.prototype,ut=dt.toString,ft=Math.max,mt=Math.min,me=function(){return ct.Date.now()};function gt(e,t,n){var r,i,a,s,d,m,u=0,p=!1,b=!1,T=!0;if(typeof e!="function")throw new TypeError(Ce);t=Me(t)||0,te(n)&&(p=!!n.leading,b="maxWait"in n,a=b?ft(Me(n.maxWait)||0,t):a,T="trailing"in n?!!n.trailing:T);function E(v){var A=r,k=i;return r=i=void 0,u=v,s=e.apply(k,A),s}function N(v){return u=v,d=setTimeout(L,t),p?E(v):s}function g(v){var A=v-m,k=v-u,h=t-A;return b?mt(h,a-k):h}function S(v){var A=v-m,k=v-u;return m===void 0||A>=t||A<0||b&&k>=a}function L(){var v=me();if(S(v))return F(v);d=setTimeout(L,g(v))}function F(v){return d=void 0,T&&r?E(v):(r=i=void 0,s)}function _(){d!==void 0&&clearTimeout(d),u=0,r=m=i=d=void 0}function X(){return d===void 0?s:F(me())}function I(){var v=me(),A=S(v);if(r=arguments,i=this,m=v,A){if(d===void 0)return N(m);if(b)return d=setTimeout(L,t),E(m)}return d===void 0&&(d=setTimeout(L,t)),s}return I.cancel=_,I.flush=X,I}function pt(e,t,n){var r=!0,i=!0;if(typeof e!="function")throw new TypeError(Ce);return te(n)&&(r="leading"in n?!!n.leading:r,i="trailing"in n?!!n.trailing:i),gt(e,t,{leading:r,maxWait:t,trailing:i})}function te(e){var t=typeof e;return!!e&&(t=="object"||t=="function")}function vt(e){return!!e&&typeof e=="object"}function ht(e){return typeof e=="symbol"||vt(e)&&ut.call(e)==tt}function Me(e){if(typeof e=="number")return e;if(ht(e))return Ne;if(te(e)){var t=typeof e.valueOf=="function"?e.valueOf():e;e=te(t)?t+"":t}if(typeof e!="string")return e===0?e:+e;e=e.replace(nt,"");var n=it.test(e);return n||at.test(e)?ot(e.slice(2),n?2:8):rt.test(e)?Ne:+e}Pe.exports=pt});var be="code-line",U=class{constructor(t,n,r){this.element=t;this.line=n;this.codeElement=r;this._detailParentElements=Array.from(Ue(t,"DETAILS"))}get isVisible(){return!this._detailParentElements.some(t=>!t.open)}},ae=(()=>{let e,t=-1;return n=>{if(!e||n!==t){t=n,e=[new U(document.body,-1)];for(let r of document.getElementsByClassName(be)){if(!(r instanceof HTMLElement))continue;let i=+r.getAttribute("data-line");isNaN(i)||(r.tagName==="CODE"&&r.parentElement&&r.parentElement.tagName==="PRE"?e.push(new U(r.parentElement,i,r)):r.tagName==="UL"||r.tagName==="OL"||e.push(new U(r,i)))}}return e}})();function oe(e,t){let n=Math.floor(e),r=ae(t),i=r[0]||null;for(let a of r){if(a.line===n)return{previous:a,next:void 0};if(a.line>n)return{previous:i,next:a};i=a}return{previous:i}}function Fe(e,t){let n=ae(t).filter(m=>m.isVisible),r=e-window.scrollY,i=-1,a=n.length-1;for(;i+1<a;){let m=Math.floor((i+a)/2),u=W(n[m]);u.top+u.height>=r?a=m:i=m}let s=n[a],d=W(s);return a>=1&&d.top>r?{previous:n[i],next:s}:a>1&&a<n.length&&d.top+d.height>r?{previous:s,next:n[a+1]}:{previous:s}}function W({element:e}){let t=e.getBoundingClientRect(),n=e.querySelector(`.${be}`);if(n){let r=n.getBoundingClientRect(),i=Math.max(1,r.top-t.top);return{top:t.top,height:i}}return t}function K(e,t,n){if(!n.settings?.scrollPreviewWithEditor)return;if(e<=0){window.scroll(window.scrollX,0);return}let{previous:r,next:i}=oe(e,t);if(!r)return;let a=0,s=W(r),d=s.top;if(i&&i.line!==r.line){let m=(e-r.line)/(i.line-r.line),u=d+s.height,p=i.element.getBoundingClientRect().top-u;a=u+m*p}else{let m=e-Math.floor(e);a=d+s.height*m}a=Math.abs(a)<1?Math.sign(a):a,window.scroll(window.scrollX,Math.max(1,window.scrollY+a))}function se(e,t){let{previous:n,next:r}=Fe(e,t);if(n){if(n.line<0)return 0;let i=W(n),a=e-window.scrollY-i.top;if(r){let s=a/(W(r).top-i.top);return n.line+s*(r.line-n.line)}else{let s=a/i.height;return n.line+s}}return null}function ye(e,t){return ae(t).find(n=>n.element.id===e)}function*Ue(e,t){for(let n=e.parentElement;n;n=n.parentElement)n.tagName===t&&(yield n)}var J=class{onDidChangeTextEditorSelection(t,n){let{previous:r}=oe(t,n);this._update(r&&(r.codeElement||r.element))}_update(t){this._unmarkActiveElement(this._current),this._markActiveElement(t),this._current=t}_unmarkActiveElement(t){t&&t.classList.toggle("code-active-line",!1)}_markActiveElement(t){t&&t.classList.toggle("code-active-line",!0)}};function Te(e){document.readyState==="loading"||document.readyState==="uninitialized"?document.addEventListener("DOMContentLoaded",e):e()}var we=(e,t)=>({postMessage(n,r){e.postMessage({type:n,source:t.settings.source,...r})}});function le(e){let t=document.getElementById("vscode-markdown-preview-data");if(t){let n=t.getAttribute(e);if(n)return n}throw new Error(`Could not load data for ${e}`)}function ce(e){return JSON.parse(le(e))}var Q=class{constructor(){this._settings=ce("data-settings")}get settings(){return this._settings}updateSettings(t){this._settings=t}};var Ee=11;function We(e,t){var n=t.attributes,r,i,a,s,d;if(!(t.nodeType===Ee||e.nodeType===Ee)){for(var m=n.length-1;m>=0;m--)r=n[m],i=r.name,a=r.namespaceURI,s=r.value,a?(i=r.localName||i,d=e.getAttributeNS(a,i),d!==s&&(r.prefix==="xmlns"&&(i=r.name),e.setAttributeNS(a,i,s))):(d=e.getAttribute(i),d!==s&&e.setAttribute(i,s));for(var u=e.attributes,p=u.length-1;p>=0;p--)r=u[p],i=r.name,a=r.namespaceURI,a?(i=r.localName||i,t.hasAttributeNS(a,i)||e.removeAttributeNS(a,i)):t.hasAttribute(i)||e.removeAttribute(i)}}var Z,Ve="http://www.w3.org/1999/xhtml",w=typeof document>"u"?void 0:document,je=!!w&&"content"in w.createElement("template"),qe=!!w&&w.createRange&&"createContextualFragment"in w.createRange();function ze(e){var t=w.createElement("template");return t.innerHTML=e,t.content.childNodes[0]}function Xe(e){Z||(Z=w.createRange(),Z.selectNode(w.body));var t=Z.createContextualFragment(e);return t.childNodes[0]}function Ye(e){var t=w.createElement("body");return t.innerHTML=e,t.childNodes[0]}function Ge(e){return e=e.trim(),je?ze(e):qe?Xe(e):Ye(e)}function ee(e,t){var n=e.nodeName,r=t.nodeName,i,a;return n===r?!0:(i=n.charCodeAt(0),a=r.charCodeAt(0),i<=90&&a>=97?n===r.toUpperCase():a<=90&&i>=97?r===n.toUpperCase():!1)}function $e(e,t){return!t||t===Ve?w.createElement(e):w.createElementNS(t,e)}function Ke(e,t){for(var n=e.firstChild;n;){var r=n.nextSibling;t.appendChild(n),n=r}return t}function de(e,t,n){e[n]!==t[n]&&(e[n]=t[n],e[n]?e.setAttribute(n,""):e.removeAttribute(n))}var Se={OPTION:function(e,t){var n=e.parentNode;if(n){var r=n.nodeName.toUpperCase();r==="OPTGROUP"&&(n=n.parentNode,r=n&&n.nodeName.toUpperCase()),r==="SELECT"&&!n.hasAttribute("multiple")&&(e.hasAttribute("selected")&&!t.selected&&(e.setAttribute("selected","selected"),e.removeAttribute("selected")),n.selectedIndex=-1)}de(e,t,"selected")},INPUT:function(e,t){de(e,t,"checked"),de(e,t,"disabled"),e.value!==t.value&&(e.value=t.value),t.hasAttribute("value")||e.removeAttribute("value")},TEXTAREA:function(e,t){var n=t.value;e.value!==n&&(e.value=n);var r=e.firstChild;if(r){var i=r.nodeValue;if(i==n||!n&&i==e.placeholder)return;r.nodeValue=n}},SELECT:function(e,t){if(!t.hasAttribute("multiple")){for(var n=-1,r=0,i=e.firstChild,a,s;i;)if(s=i.nodeName&&i.nodeName.toUpperCase(),s==="OPTGROUP")a=i,i=a.firstChild;else{if(s==="OPTION"){if(i.hasAttribute("selected")){n=r;break}r++}i=i.nextSibling,!i&&a&&(i=a.nextSibling,a=null)}e.selectedIndex=n}}},V=1,Je=11,Ae=3,Le=8;function R(){}function Qe(e){if(e)return e.getAttribute&&e.getAttribute("id")||e.id}function Ze(e){return function(n,r,i){if(i||(i={}),typeof r=="string")if(n.nodeName==="#document"||n.nodeName==="HTML"||n.nodeName==="BODY"){var a=r;r=w.createElement("html"),r.innerHTML=a}else r=Ge(r);var s=i.getNodeKey||Qe,d=i.onBeforeNodeAdded||R,m=i.onNodeAdded||R,u=i.onBeforeElUpdated||R,p=i.onElUpdated||R,b=i.onBeforeNodeDiscarded||R,T=i.onNodeDiscarded||R,E=i.onBeforeElChildrenUpdated||R,N=i.childrenOnly===!0,g=Object.create(null),S=[];function L(c){S.push(c)}function F(c,l){if(c.nodeType===V)for(var o=c.firstChild;o;){var f=void 0;l&&(f=s(o))?L(f):(T(o),o.firstChild&&F(o,l)),o=o.nextSibling}}function _(c,l,o){b(c)!==!1&&(l&&l.removeChild(c),T(c),F(c,o))}function X(c){if(c.nodeType===V||c.nodeType===Je)for(var l=c.firstChild;l;){var o=s(l);o&&(g[o]=l),X(l),l=l.nextSibling}}X(n);function I(c){m(c);for(var l=c.firstChild;l;){var o=l.nextSibling,f=s(l);if(f){var x=g[f];x&&ee(l,x)?(l.parentNode.replaceChild(x,l),A(x,l)):I(l)}else I(l);l=o}}function v(c,l,o){for(;l;){var f=l.nextSibling;(o=s(l))?L(o):_(l,c,!0),l=f}}function A(c,l,o){var f=s(l);f&&delete g[f],!(!o&&(u(c,l)===!1||(e(c,l),p(c),E(c,l)===!1)))&&(c.nodeName!=="TEXTAREA"?k(c,l):Se.TEXTAREA(c,l))}function k(c,l){var o=l.firstChild,f=c.firstChild,x,P,B,G,O;e:for(;o;){for(G=o.nextSibling,x=s(o);f;){if(B=f.nextSibling,o.isSameNode&&o.isSameNode(f)){o=G,f=B;continue e}P=s(f);var $=f.nodeType,D=void 0;if($===o.nodeType&&($===V?(x?x!==P&&((O=g[x])?B===O?D=!1:(c.insertBefore(O,f),P?L(P):_(f,c,!0),f=O):D=!1):P&&(D=!1),D=D!==!1&&ee(f,o),D&&A(f,o)):($===Ae||$==Le)&&(D=!0,f.nodeValue!==o.nodeValue&&(f.nodeValue=o.nodeValue))),D){o=G,f=B;continue e}P?L(P):_(f,c,!0),f=B}if(x&&(O=g[x])&&ee(O,o))c.appendChild(O),A(O,o);else{var ie=d(o);ie!==!1&&(ie&&(o=ie),o.actualize&&(o=o.actualize(c.ownerDocument||w)),c.appendChild(o),I(o))}o=G,f=B}v(c,f,P);var he=Se[c.nodeName];he&&he(c,l)}var h=n,Y=h.nodeType,ve=r.nodeType;if(!N){if(Y===V)ve===V?ee(n,r)||(T(n),h=Ke(n,$e(r.nodeName,r.namespaceURI))):h=r;else if(Y===Ae||Y===Le){if(ve===Y)return h.nodeValue!==r.nodeValue&&(h.nodeValue=r.nodeValue),h;h=r}}if(h===r)T(n);else{if(r.isSameNode&&r.isSameNode(h))return;if(A(h,r,N),S)for(var ne=0,_e=S.length;ne<_e;ne++){var re=g[S[ne]];re&&_(re,re.parentNode,!1)}}return!N&&h!==n&&n.parentNode&&(h.actualize&&(h=h.actualize(n.ownerDocument||w)),n.parentNode.replaceChild(h,n)),h}}var et=Ze(We),xe=et;var ue=Object.freeze({http:"http",https:"https",file:"file",untitled:"untitled",mailto:"mailto",vscode:"vscode","vscode-insiders":"vscode-insiders",notebookCell:"vscode-notebook-cell"});function fe(e,t){return t.toLowerCase().startsWith(e+":")}var De=Oe(),H=0,Ie=new J,y=new Q,M=0,j=y.settings.source,q=acquireVsCodeApi(),ge=q.getState()??{},C={...ge,...ce("data-state")};typeof ge.scrollProgress<"u"&&ge?.resource!==C.resource&&(C.scrollProgress=0);q.setState(C);var z=we(q,y);window.cspAlerter.setPoster(z);window.styleLoadingMonitor.setPoster(z);function pe(e){let t=document.getElementsByTagName("img");if(t.length>0){let n=Array.from(t,r=>r.complete?Promise.resolve():new Promise(i=>{r.addEventListener("load",()=>i()),r.addEventListener("error",()=>i())}));Promise.all(n).then(()=>setTimeout(e,0))}else setTimeout(e,0)}Te(()=>{let t=new DOMParser().parseFromString(le("data-initial-md-content"),"text/html");document.body.appendChild(t.body);let n=C.scrollProgress;if(ke(),typeof n=="number"&&!y.settings.fragment){pe(()=>{H+=1;let r=Math.max(1,n*document.body.clientHeight);window.scrollTo(0,r)});return}y.settings.scrollPreviewWithEditor&&pe(()=>{if(y.settings.fragment){let r;try{r=encodeURIComponent(y.settings.fragment)}catch{r=y.settings.fragment}C.fragment=void 0,q.setState(C);let i=ye(r,M);i&&(H+=1,K(i.line,M,y))}else isNaN(y.settings.line)||(H+=1,K(y.settings.line,M,y))}),typeof y.settings.selectedLine=="number"&&Ie.onDidChangeTextEditorSelection(y.settings.selectedLine,M)});var bt=(()=>{let e=De(t=>{H+=1,pe(()=>K(t,M,y))},50);return t=>{isNaN(t)||(C.line=t,e(t))}})();window.addEventListener("resize",()=>{H+=1,He()},!0);function ke(){let e=document.getElementsByTagName("img"),t=0;for(let n of e){n.id="image-"+t,t+=1;let r=n.getAttribute("data-src"),a=r&&!(fe(ue.http,r)||fe(ue.https,r))?"localImage":"image";n.setAttribute("data-vscode-context",JSON.stringify({webviewSection:a,id:n.id,preventDefaultContextMenuItems:!0,resource:j,imageSource:r}))}}async function Re(e,t=5){if(!document.hasFocus()&&t>0){setTimeout(()=>{Re(e,t-1)},20);return}try{await navigator.clipboard.write([new ClipboardItem({"image/png":new Promise(n=>{let r=document.createElement("canvas");r!==null&&(r.width=e.naturalWidth,r.height=e.naturalHeight,r.getContext("2d")?.drawImage(e,0,0)),r.toBlob(i=>{i&&n(i),r.remove()},"image/png")})})])}catch(n){console.error(n)}}window.addEventListener("message",async e=>{let t=e.data;switch(t.type){case"copyImage":{let n=document.getElementById(t.id);n instanceof HTMLImageElement&&Re(n);return}case"onDidChangeTextEditorSelection":t.source===j&&Ie.onDidChangeTextEditorSelection(t.line,M);return;case"updateView":t.source===j&&bt(t.line);return;case"updateContent":{let n=document.querySelector(".markdown-body"),i=new DOMParser().parseFromString(t.content,"text/html");for(let a of Array.from(i.querySelectorAll("meta")))a.hasAttribute("http-equiv")&&a.remove();if(t.source!==j)n.replaceWith(i.querySelector(".markdown-body")),j=t.source;else{let a=["open"],s=(u,p)=>{if(u.isEqualNode(p))return!0;if(u.tagName!==p.tagName||u.textContent!==p.textContent)return!1;let b=[...u.attributes].filter(g=>!a.includes(g.name)),T=[...p.attributes].filter(g=>!a.includes(g.name));if(b.length!==T.length)return!1;for(let g=0;g<b.length;++g){let S=b[g],L=T[g];if(S.name!==L.name||S.value!==L.value&&S.name!=="data-line")return!1}let E=Array.from(u.children),N=Array.from(p.children);return E.length===N.length&&E.every((g,S)=>s(g,N[S]))},d=i.querySelector(".markdown-body"),m=d.querySelectorAll("link");for(let u of m)u.remove();d.prepend(...m),xe(n,d,{childrenOnly:!0,onBeforeElUpdated:(u,p)=>{if(s(u,p)){let b=u.querySelectorAll("[data-line]"),T=p.querySelectorAll("[data-line]");b.length!==T.length&&console.log("unexpected line number change");for(let E=0;E<b.length;++E){let N=b[E],g=T[E];g&&N.setAttribute("data-line",g.getAttribute("data-line"))}return!1}return u.tagName==="DETAILS"&&p.tagName==="DETAILS"&&u.hasAttribute("open")&&p.setAttribute("open",""),!0}})}++M,window.dispatchEvent(new CustomEvent("vscode.markdown.updateContent")),ke();break}}},!1);document.addEventListener("dblclick",e=>{if(!y.settings.doubleClickToSwitchToEditor)return;for(let r=e.target;r;r=r.parentNode)if(r.tagName==="A")return;let t=e.pageY,n=se(t,M);typeof n=="number"&&!isNaN(n)&&z.postMessage("didClick",{line:Math.floor(n)})});var yt=["http:","https:","mailto:","vscode:","vscode-insiders:"];document.addEventListener("click",e=>{if(!e)return;let t=e.target;for(;t;){if(t.tagName&&t.tagName==="A"&&t.href){if(t.getAttribute("href").startsWith("#"))return;let n=t.getAttribute("data-href");if(!n&&(n=t.getAttribute("href"),yt.some(r=>n.startsWith(r))))return;if(!/^[a-z\-]+:/i.test(n)){z.postMessage("openLink",{href:n}),e.preventDefault(),e.stopPropagation();return}return}t=t.parentNode}},!0);window.addEventListener("scroll",De(()=>{if(He(),H>0)H-=1;else{let e=se(window.scrollY,M);typeof e=="number"&&!isNaN(e)&&z.postMessage("revealLine",{line:e})}},50));function He(){C.scrollProgress=window.scrollY/document.body.clientHeight,q.setState(C)}
+</script>
+
+    </body>
+</html>
